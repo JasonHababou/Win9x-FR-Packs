@@ -97,7 +97,7 @@ Pack 2 et extras QuickInstall : DirectX 8.1, 8.2 et 9.0c ; MS Agent 2.0 FR ; Mic
 | UltimateZip (EN) | 2.7 | à confirmer | freeware |
 | FTP Commander (EN) | à confirmer | InternetSoft | freeware |
 | Hover!, SkiFree, Échecs | - | Microsoft ; SkiFree : Chris Pirih | - |
-| 3DMark 99, 2000, 2001, 03 | - | Futuremark (UL) ; clés publiées par l'éditeur | freeware |
+| 3DMark 99, 2000, 2001, 03 | - | Futuremark (UL) ; l'éditeur publie les clés et les téléchargements de ses anciens tests : https://benchmarks.ul.com/legacy-benchmarks | gratuit (clés publiées par l'éditeur) |
 
 ## Outils de construction (non distribués sur les images)
 
