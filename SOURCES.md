@@ -8,11 +8,17 @@ Tous ces fichiers restent la propriété de leurs auteurs. La licence MIT du dé
 
 | Composant | Version | Auteur | Où | Remarque |
 |---|---|---|---|---|
-| Service Pack non officiel Windows 98 SE, version FR | 3.0 B4 FR | à confirmer (communauté Windows 98, MSFN) | 98 : `02_SP30` | compilation de mises à jour Microsoft |
-| Couche U98SESP | 3.63 et 3.66 (filtrée FR par ce projet) | à confirmer (MSFN) | 98 : `03_SYST/copie363`, `03_SYST/sp366fr` | fichiers anglais écartés, détail dans `RAPPORT_366FR.TXT` |
-| Windows Me Service Pack non officiel FR | 2.02 Beta 9 (2007) | à confirmer | Me : `02_MESP` | compilation de mises à jour Microsoft |
+| Service Pack non officiel Windows 98 SE, version FR | 3.0 B4 FR | à confirmer | 98 : `02_SP30` | compilation de mises à jour Microsoft. Origine : http://win9x4ever.online.fr/ (pages de téléchargement hors ligne) |
+| Couche U98SESP (Unofficial Windows 98 SE Service Pack) | 3.63 et 3.66 (filtrée FR par ce projet) | à confirmer | 98 : `03_SYST/copie363`, `03_SYST/sp366fr` | fichiers anglais écartés, détail dans `RAPPORT_366FR.TXT`. Sources : https://www.htasoft.com/u98sesp/ et https://techtalk.cc/viewtopic.php?t=65 |
+| Windows Me Service Pack non officiel FR | 2.02 Beta 9 (2007, fichier `MESP1FR_2.02b9_2007.EXE`) | à confirmer | Me : `02_MESP` | compilation de mises à jour Microsoft. Origine : http://win9x4ever.online.fr/ (comme `MESP202B5V2_FR.EXE`, version b5 ; pages de téléchargement hors ligne) |
+| Pack de mises à jour WUPG98 (AfterLife) | - | projet wupg98 | 98 : provenance de Taskbar Shuffle et des filtres de Paint | https://github.com/wupg98/wupg98-AFLl_en |
 
-Sources générales : forum MSFN Windows 9x/Me (https://msfn.org/board/forum/8-windows-9xme/), MDGx (https://www.mdgx.com/).
+Sources générales :
+- forum MSFN Windows 9x/Me : https://msfn.org/board/forum/8-windows-9xme/ ;
+- MDGx : https://www.mdgx.com/ ;
+- Phil's Computer Lab : https://www.philscomputerlab.com/ ;
+- Win3x.org (mises à jour de sécurité, Plus! 98, Pack98ME) : http://www.win3x.org/ ;
+- Win9x4ever : http://win9x4ever.online.fr/ (Service Packs FR, pages de téléchargement hors ligne).
 
 ## Logiciels libres ou gratuits de la communauté
 
@@ -28,10 +34,10 @@ Sources générales : forum MSFN Windows 9x/Me (https://msfn.org/board/forum/8-w
 | 7-Zip | 9.20 | Igor Pavlov | https://www.7-zip.org/ | GNU LGPL |
 | QRes | 1.0.9.5 | Berend Engelbrecht | SourceForge (qres) | BSD |
 | MODEAFF (Raccourci de jeu) | - | ce projet (source NSIS dans `construction`) | - | MIT |
-| CuteMouse (`CTMOUSE.EXE`, mode MS-DOS de Me) | à confirmer | projet CuteMouse | à confirmer | GPL |
-| UIDE (`UIDE.SYS`, CD-ROM sous DOS, Me) | à confirmer | Jack R. Ellis | à confirmer | à confirmer |
+| CuteMouse (`CTMOUSE.EXE`, mode MS-DOS de Me) | 2.1 beta 4 | projet CuteMouse (distribution FreeDOS) | https://www.freedos.org/ | GPL |
+| UIDE (`UIDE.SYS`, CD-ROM sous DOS, Me) | 2020-07-07 | Jack R. Ellis (distribution FreeDOS) | https://www.freedos.org/ | à confirmer |
 | GSAR (`GSAR.EXE`) | à confirmer | à confirmer | à confirmer | GPL |
-| Mode MS-DOS pour Me (`DOSMODE.INF`, IO.SYS modifié, `WINOA386.MO_`) | à confirmer | à confirmer (base « TPC ») | à confirmer | à confirmer |
+| Mode MS-DOS pour Me (`DOSMODE.INF`, IO.SYS modifié, `WINOA386.MO_`) | à confirmer | soporific (Pack98ME, base « TPC ») | http://www.win3x.org/ | à confirmer |
 | Resource Hacker (thème Windows 2000) | à confirmer | Angus Johnson | https://www.angusj.com/resourcehacker/ | freeware |
 | NirCmd (Service Pack Me) | à confirmer | NirSoft | https://www.nirsoft.net/ | freeware |
 
@@ -42,10 +48,10 @@ Sources générales : forum MSFN Windows 9x/Me (https://msfn.org/board/forum/8-w
 | DAEMON Tools | 3.47 | Disc Soft / DT Soft | 98 et Me : `10_APPLI/daemon` |
 | Fraps | 1.9D | Beepa | `10_APPLI/fraps` |
 | SIV (System Information Viewer) | 5.88 | Ray Hinchliffe (rh-software.com), gratuit pour un usage personnel | `10_APPLI/siv` |
-| Jeu de Tarot | à confirmer | Sybex | `10_APPLI/tarot` |
-| Taskbar Shuffle | 2.5 | à confirmer | `05_EXTRA/taskbarshuffle` |
+| Jeu de Tarot | à confirmer (édition Sybex) | Laurent Pellenc ; une nouvelle version, sans les voix, est sur son site : http://www.pellencsoftware.com/ | `10_APPLI/tarot` |
+| Taskbar Shuffle | 2.5 | à confirmer (provenance : pack WUPG98) | `05_EXTRA/taskbarshuffle` |
 | ASPI | 4.71.2 | Adaptec | `05_EXTRA/aspi` |
-| Filtres graphiques Paint | à confirmer | Microsoft (filtres d'Office) | `05_EXTRA/mspaintfilter` |
+| Filtres graphiques Paint | à confirmer | Microsoft (filtres d'Office) ; provenance : pack WUPG98 | `05_EXTRA/mspaintfilter` |
 
 ## Microsoft
 
