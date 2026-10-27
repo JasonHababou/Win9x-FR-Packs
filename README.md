@@ -6,10 +6,19 @@ Packs correctifs **non officiels** pour **Windows 98 SE français** et **Windows
 
 > Ce dépôt ne contient **que les sources** : scripts d'installation, INF, VBS, sources NSIS, scripts de construction et documentation. Les fichiers de Microsoft et des autres éditeurs ne sont pas ici.
 >
-> **Les images CD prêtes à graver sont sur archive.org** : <!-- LIENS ARCHIVE.ORG A AJOUTER APRES PUBLICATION -->
-> - Correctif Windows 98 SE FR : `Win98FR_Correctif_v3.iso`
-> - Correctif Windows Me FR : `WinMeFR_Correctif_v1.iso`
-> - Pack 2 (logiciels, jeux, outils) pour 98 et Me : `Win9x_FR_Plus_v1.iso`
+> **Les images prêtes à graver sont sur archive.org** : <!-- LIENS ARCHIVE.ORG A AJOUTER APRES PUBLICATION -->
+>
+> | Image | Contenu |
+> |---|---|
+> | `Win98FR_Correctif_v3.iso` | Correctif Windows 98 SE FR (le pack seul, pour un 98 déjà installé) |
+> | `WinMeFR_Correctif_v1.iso` | Correctif Windows Me FR (le pack seul, pour un Me déjà installé) |
+> | `Win9x_FR_Plus_v1.iso` | Pack 2 : logiciels, jeux et outils pour 98 et Me |
+> | `Win98SE_FR_SP30_v18.iso` | CD d'installation Windows 98 SE FR, SP3.0 intégré, pack installé automatiquement |
+> | `WinMe_FR_v2.iso` | CD d'installation Windows Me FR, pack lancé automatiquement |
+> | `Win98SE_FR_QI_DVD_v3.iso` | QuickInstall Windows 98 SE FR (DVD) : système complet en quelques minutes |
+> | `WinMe_FR_QI_DVD_v1.iso` | QuickInstall Windows Me FR (DVD) |
+>
+> Seule votre clé Windows est à saisir : Plus! 98 et Office 2000 ont leur clé incluse.
 
 ## Pour qui ?
 
@@ -17,13 +26,11 @@ Pour un Windows 98 SE ou Me **en français** fraîchement installé depuis le CD
 
 ## Installation
 
-1. Installez Windows depuis votre CD d'origine, avec votre propre clé de produit.
+1. Installez Windows depuis votre CD d'origine, avec votre propre clé de produit Windows.
 2. Insérez le CD correctif : le menu s'ouvre tout seul. Sinon, lancez `AUTORUN.EXE` ou `INSTALL.BAT`.
 3. Laissez le CD dans le lecteur jusqu'à la fin : Windows redémarre plusieurs fois et l'installation reprend toute seule. Le journal est dans `C:\W98FR\JOURNAL.TXT` (98) ou `C:\WMEFR\JOURNAL.TXT` (Me).
 4. Installez les pilotes de la carte graphique et de la carte son.
 5. Insérez le CD du pack 2 pour DirectX, les logiciels, les jeux et les outils de test.
-
-Plus! 98 (pack 98) demande **votre** clé de produit Plus! 98 pendant l'installation.
 
 ## Contenu
 
@@ -37,7 +44,7 @@ Plus! 98 (pack 98) demande **votre** clé de produit Plus! 98 pendant l'installa
 | 2 | Service Pack non officiel SP3.0 FR |
 | 3 | Shell32 et GDI à jour, fichiers 3.63, certificats racine |
 | 4 | Correctifs Internet Explorer et Outlook Express |
-| 5 | KernelEx 4.5, lecteur NTFS, Plus! 98 (avec votre clé), Pinball, réglages |
+| 5 | KernelEx 4.5, lecteur NTFS, Plus! 98 (clé incluse), Pinball, réglages |
 | 6 | Composants optionnels (fuseaux horaires FR, dossiers compressés, TrueType) |
 | 8 | .NET Framework 1.1 SP1 FR |
 | 9 | Pilotes chipset Intel, VIA, SiS, nVidia (détection automatique) |

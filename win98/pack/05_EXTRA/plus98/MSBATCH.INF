@@ -1,0 +1,20 @@
+; Fichier de reponses Plus! 98 FR - Pack Win98FR
+; INSTALL.EXE lit automatiquement ce fichier dans son dossier.
+; Seuls les Themes du Bureau et Spider Solitaire sont installes.
+; >>> Saisissez VOTRE cle de produit Plus! 98 apres ProductID= <<<
+; Laissee vide, l'installeur la demandera a l'ecran.
+; Section [Plus] : nom lu dans INSTALL.EXE (cles ProductID, Express,
+; ShowEula, VirusScan, AutoReboot). AutoReboot=0 : pas de redemarrage
+; automatique, c'est install.bat qui redemarre.
+[Plus]
+ProductID=411-2781863
+Express=1
+ShowEula=0
+VirusScan=0
+AutoReboot=0
+
+[PlusComponents]
+"Thèmes du Bureau"=1
+"Spider Solitaire"=1
+"Compléments du Nettoyage de disque"=1
+"Dossiers compressés"=1

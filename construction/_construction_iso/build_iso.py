@@ -19,10 +19,11 @@ WIN = Path(r"<DOSSIER_WINDOWS>\win98se")
 ISO_SRC = WIN / "ISO/Windows98/Windows 98 Se Fr Bootable.iso"
 SP30 = WIN / "Win98FR_v3/02_SP30"
 SP366 = WIN / "Win98FR_v3/03_SYST/sp366fr"
-PACK = WIN / "Win98FR_v3"
+# W98_PACK / W98_CLE : version publique (pack sans cle Plus! 98, cle demandee par Setup)
+PACK = Path(os.environ.get("W98_PACK", WIN / "Win98FR_v3"))
 P9X = WIN / "Sources/patcher9x-0.9.91/win64/patcher9x.exe"
 VBEMP = WIN / "Sources/vbemp/140214"
-CLE = "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"                # cle de l'utilisateur (MSBATCH.INF)
+CLE = os.environ.get("W98_CLE", "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX")          # cle de l'utilisateur (MSBATCH.INF) ; vide = demandee
 TRAD = WIN / "WIN9X/Mise a jour/FR traduits (OLEDLG HHCTRL)"
 W, ISO_OUT = Path(sys.argv[1]), Path(sys.argv[2])
 RETIRER = ["cdsample", "add-ons", "win98/ols", "win98/tour"]
