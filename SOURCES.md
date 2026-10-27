@@ -48,7 +48,7 @@ Sources générales :
 | DAEMON Tools | 3.47 | Disc Soft / DT Soft | 98 et Me : `10_APPLI/daemon` |
 | Fraps | 1.9D | Beepa | `10_APPLI/fraps` |
 | SIV (System Information Viewer) | 5.88 | Ray Hinchliffe (rh-software.com), gratuit pour un usage personnel | `10_APPLI/siv` |
-| Jeu de Tarot | à confirmer (édition Sybex) | Laurent Pellenc ; une nouvelle version, sans les voix, est sur son site : http://www.pellencsoftware.com/ | `10_APPLI/tarot` |
+| Jeu de Tarot | version CD Sybex (source : https://www.abandonware-france.org/ltf_abandon/ltf_jeu.php?id=3829) | Laurent Pellenc ; une nouvelle version, sans les voix, est sur son site : http://www.pellencsoftware.com/ | `10_APPLI/tarot` |
 | Taskbar Shuffle | 2.5 | à confirmer (provenance : pack WUPG98) | `05_EXTRA/taskbarshuffle` |
 | ASPI | 4.71.2 | Adaptec | `05_EXTRA/aspi` |
 | Filtres graphiques Paint | à confirmer | Microsoft (filtres d'Office) ; provenance : pack WUPG98 | `05_EXTRA/mspaintfilter` |
