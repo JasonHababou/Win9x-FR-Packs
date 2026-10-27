@@ -82,7 +82,7 @@ Ce projet assemble le travail de nombreuses personnes :
 - **oerg866** (QuickInstall) ;
 - **RetroZilla**, **7-Zip**, **QRes** et les autres logiciels inclus.
 
-Les fichiers de Microsoft et des autres éditeurs restent leur propriété. La liste complète (versions, auteurs, sites, licences) est dans [](SOURCES.md).
+Les fichiers de Microsoft et des autres éditeurs restent leur propriété. La liste complète (versions, auteurs, sites, licences) est dans [SOURCES.md](SOURCES.md).
 
 ## Avertissement
 
