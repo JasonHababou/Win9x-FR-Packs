@@ -1,0 +1,15 @@
+; ============================================================
+; FINRUN.INF - Pack WinMeFR : fin de l'installation, retire la reprise
+; automatique (valeur Run\WMEFR = command.com /c C:\WMEFR\GO.BAT).
+; DelReg d'ADVPACK = fiable (l'effacement par WSH laissait la valeur, pack 98).
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+DelReg=FinReprise
+
+[FinReprise]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Run","WMEFR"

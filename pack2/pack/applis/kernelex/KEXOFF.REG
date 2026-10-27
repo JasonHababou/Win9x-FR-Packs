@@ -1,0 +1,8 @@
+REGEDIT4
+
+; Pack Win98FR : KernelEx DESACTIVE par defaut (choix de l'utilisateur).
+; Il ne s'applique qu'aux programmes regles dans AppSettings\Configs
+; (Firefox, VLC... et les reglages de jumper), ou a ceux que l'on regle
+; soi-meme : clic droit sur le programme > Proprietes > onglet KernelEx.
+[HKEY_LOCAL_MACHINE\Software\KernelEx]
+"DisableExtensions"=dword:00000001

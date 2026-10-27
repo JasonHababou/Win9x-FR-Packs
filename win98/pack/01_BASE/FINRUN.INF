@@ -1,0 +1,66 @@
+; ============================================================
+; FINRUN.INF - Pack Win98FR : fin de l'installation, retire la reprise
+; automatique (valeur Run\W98FR = command.com /c C:\W98FR\GO.BAT).
+; L'ancien effacement par WSH (RegDelete) laissait la valeur en place :
+; une fenetre MS-DOS "fichier introuvable" s'ouvrait a chaque demarrage
+; (Sauvegardes 5, 6 et 7, GX240 2026-10-17). DelReg d'ADVPACK = fiable.
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+DelReg=FinReprise,FinComposants
+DelFiles=FinComposants.Inf
+
+[FinReprise]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Run","W98FR"
+
+; ISO Win98FR : groupe "Pack Windows 98 FR" de l'installation de Windows
+; (W98FRPK.INF) retire d'Ajout/Suppression une fois le pack installe
+[FinComposants]
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FRTop"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FRTop"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_366"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_366"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_PMEM"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_PMEM"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_DMA"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_DMA"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_NVSURV"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_NVSURV"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_CHIP"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_CHIP"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_DOSH"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_DOSH"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_LOGO"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_LOGO"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_WSH"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_WSH"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_ZIP"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_ZIP"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_VC5"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_VC5"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_VC8"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_VC8"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_QRES"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_QRES"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_7Z"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_7Z"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_DT"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_DT"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_RZ"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_RZ"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_MSVC"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_MSVC"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_NET11"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_NET11"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents","W98FR_TAROT"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OptionalComponents\W98FR_TAROT"
+
+[FinComposants.Inf]
+W98FRPK.INF
+
+[DestinationDirs]
+FinComposants.Inf=17

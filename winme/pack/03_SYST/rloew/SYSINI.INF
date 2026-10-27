@@ -1,0 +1,15 @@
+; Apres PATCHMEM (RLoew) : retire de SYSTEM.INI les limites posees par
+; le Service Pack (SP3.0 ecrit MaxPhysPage=40000). Consigne du manuel
+; PATCHMEM : "Remove the line containing MaxPhysPage / MaxFileCache".
+; Sans effet si les lignes sont absentes.
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+UpdateInis=PM.Ini
+
+[PM.Ini]
+system.ini,386Enh,"MaxPhysPage=*",
+system.ini,vcache,"MaxFileCache=*",

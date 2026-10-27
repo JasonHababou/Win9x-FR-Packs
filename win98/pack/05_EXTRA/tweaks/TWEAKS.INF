@@ -1,0 +1,120 @@
+; ============================================================
+; TWEAKS.INF - Reglages de performance du pack Win98FR
+; Fusion de TWEAKS366.INF (U98SESP3.66) et tweaks.inf (SP3.0 B4 FR) :
+;  - SP3.0 FR : cache d'icones 2048, ConservativeSwapfileUsage,
+;    DMABufferSize=64, LocalLoadHigh=1, etiquette FR
+;  - 3.66     : menus contextuels / glisser-deposer "Copier vers",
+;    "Deplacer vers" et "Envoyer vers", msdos.sys SystemReg=0
+; Remplace aussi %17%\TWEAKS.INF (copie SP3.0) pour que la
+; desinstallation utilise ce fichier. La desinstallation ne retire
+; pas "Envoyer vers" (present d'origine dans Windows 98).
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+CopyFiles=Tweaks.Inf
+AddReg=AddReg.Tweaks
+UpdateInis=UpdateInis.Tweaks
+
+[DefaultUninstall]
+SmartReboot=N
+Cleanup=1
+DelReg=DelReg.Uninst.Tweaks
+UpdateInis=UpdateInis.Uninst.Tweaks
+
+[DestinationDirs]
+Tweaks.Inf=17
+
+[Tweaks.Inf]
+TWEAKS.INF
+
+[AddReg.Tweaks]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Explorer","Max Cached Icons",,"2048"
+HKLM,"SOFTWARE\Classes\*\shellex\ContextMenuHandlers\Copy To",,,"{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\*\shellex\ContextMenuHandlers\Move To",,,"{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\*\shellex\ContextMenuHandlers\Send To",,,"{7BA4C740-9E81-11CF-99D3-00AA004AE837}"
+HKLM,"SOFTWARE\Classes\*\shellex\DragDropHandlers\Copy To",,,"{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\*\shellex\DragDropHandlers\Move To",,,"{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\*\shellex\DragDropHandlers\Send To",,,"{7BA4C740-9E81-11CF-99D3-00AA004AE837}"
+HKLM,"SOFTWARE\Classes\Directory\shellex\ContextMenuHandlers\Copy To",,,"{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\Directory\shellex\ContextMenuHandlers\Move To",,,"{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\Directory\shellex\ContextMenuHandlers\Send To",,,"{7BA4C740-9E81-11CF-99D3-00AA004AE837}"
+HKLM,"SOFTWARE\Classes\Directory\shellex\DragDropHandlers\Copy To",,,"{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\Directory\shellex\DragDropHandlers\Move To",,,"{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\Directory\shellex\DragDropHandlers\Send To",,,"{7BA4C740-9E81-11CF-99D3-00AA004AE837}"
+HKLM,"SOFTWARE\Classes\Drive\shellex\ContextMenuHandlers\Copy To",,,"{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\Drive\shellex\ContextMenuHandlers\Move To",,,"{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\Drive\shellex\ContextMenuHandlers\Send To",,,"{7BA4C740-9E81-11CF-99D3-00AA004AE837}"
+HKLM,"SOFTWARE\Classes\Drive\shellex\DragDropHandlers\Copy To",,,"{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\Drive\shellex\DragDropHandlers\Move To",,,"{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\Drive\shellex\DragDropHandlers\Send To",,,"{7BA4C740-9E81-11CF-99D3-00AA004AE837}"
+HKLM,"SOFTWARE\Classes\Folder\shellex\ContextMenuHandlers\Copy To",,,"{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\Folder\shellex\ContextMenuHandlers\Move To",,,"{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\Folder\shellex\ContextMenuHandlers\Send To",,,"{7BA4C740-9E81-11CF-99D3-00AA004AE837}"
+HKLM,"SOFTWARE\Classes\Folder\shellex\DragDropHandlers\Copy To",,,"{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\Folder\shellex\DragDropHandlers\Move To",,,"{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\Folder\shellex\DragDropHandlers\Send To",,,"{7BA4C740-9E81-11CF-99D3-00AA004AE837}"
+HKLM,"SOFTWARE\Classes\AllFilesystemObjects\shellex\ContextMenuHandlers\Copy To",,,"{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\AllFilesystemObjects\shellex\ContextMenuHandlers\Move To",,,"{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\AllFilesystemObjects\shellex\ContextMenuHandlers\Send To",,,"{7BA4C740-9E81-11CF-99D3-00AA004AE837}"
+HKLM,"SOFTWARE\Classes\AllFilesystemObjects\shellex\DragDropHandlers\Copy To",,,"{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\AllFilesystemObjects\shellex\DragDropHandlers\Move To",,,"{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\AllFilesystemObjects\shellex\DragDropHandlers\Send To",,,"{7BA4C740-9E81-11CF-99D3-00AA004AE837}"
+HKLM,"SOFTWARE\Classes\AllFilesystemEditObjects\shellex\ContextMenuHandlers\Copy To",,,"{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\AllFilesystemEditObjects\shellex\ContextMenuHandlers\Move To",,,"{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\AllFilesystemEditObjects\shellex\ContextMenuHandlers\Send To",,,"{7BA4C740-9E81-11CF-99D3-00AA004AE837}"
+HKLM,"SOFTWARE\Classes\AllFilesystemEditObjects\shellex\DragDropHandlers\Copy To",,,"{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\AllFilesystemEditObjects\shellex\DragDropHandlers\Move To",,,"{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+HKLM,"SOFTWARE\Classes\AllFilesystemEditObjects\shellex\DragDropHandlers\Send To",,,"{7BA4C740-9E81-11CF-99D3-00AA004AE837}"
+HKLM,%UninstallKey%,DisplayName,,"%PackageName%"
+HKLM,%UninstallKey%,UninstallString,,"RunDll32.exe %11%\AdvPack.Dll,LaunchINFSection %17%\TWEAKS.INF,DefaultUninstall"
+
+[UpdateInis.Tweaks]
+%30%\msdos.sys,options,,"systemreg=0"
+System.ini,386enh,,"ConservativeSwapfileUsage=1"
+System.ini,386enh,,"DMABufferSize=64"
+System.ini,386enh,,"LocalLoadHigh=1"
+
+[DelReg.Uninst.Tweaks]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Explorer","Max Cached Icons"
+HKLM,"SOFTWARE\Classes\*\shellex\ContextMenuHandlers\Copy To"
+HKLM,"SOFTWARE\Classes\*\shellex\ContextMenuHandlers\Move To"
+HKLM,"SOFTWARE\Classes\*\shellex\DragDropHandlers\Copy To"
+HKLM,"SOFTWARE\Classes\*\shellex\DragDropHandlers\Move To"
+HKLM,"SOFTWARE\Classes\Directory\shellex\ContextMenuHandlers\Copy To"
+HKLM,"SOFTWARE\Classes\Directory\shellex\ContextMenuHandlers\Move To"
+HKLM,"SOFTWARE\Classes\Directory\shellex\DragDropHandlers\Copy To"
+HKLM,"SOFTWARE\Classes\Directory\shellex\DragDropHandlers\Move To"
+HKLM,"SOFTWARE\Classes\Drive\shellex\ContextMenuHandlers\Copy To"
+HKLM,"SOFTWARE\Classes\Drive\shellex\ContextMenuHandlers\Move To"
+HKLM,"SOFTWARE\Classes\Drive\shellex\DragDropHandlers\Copy To"
+HKLM,"SOFTWARE\Classes\Drive\shellex\DragDropHandlers\Move To"
+HKLM,"SOFTWARE\Classes\Folder\shellex\ContextMenuHandlers\Copy To"
+HKLM,"SOFTWARE\Classes\Folder\shellex\ContextMenuHandlers\Move To"
+HKLM,"SOFTWARE\Classes\Folder\shellex\DragDropHandlers\Copy To"
+HKLM,"SOFTWARE\Classes\Folder\shellex\DragDropHandlers\Move To"
+HKLM,"SOFTWARE\Classes\AllFilesystemObjects\shellex\ContextMenuHandlers\Copy To"
+HKLM,"SOFTWARE\Classes\AllFilesystemObjects\shellex\ContextMenuHandlers\Move To"
+HKLM,"SOFTWARE\Classes\AllFilesystemObjects\shellex\DragDropHandlers\Copy To"
+HKLM,"SOFTWARE\Classes\AllFilesystemObjects\shellex\DragDropHandlers\Move To"
+HKLM,"SOFTWARE\Classes\AllFilesystemEditObjects\shellex\ContextMenuHandlers\Copy To"
+HKLM,"SOFTWARE\Classes\AllFilesystemEditObjects\shellex\ContextMenuHandlers\Move To"
+HKLM,"SOFTWARE\Classes\AllFilesystemEditObjects\shellex\DragDropHandlers\Copy To"
+HKLM,"SOFTWARE\Classes\AllFilesystemEditObjects\shellex\DragDropHandlers\Move To"
+HKLM,%UninstallKey%
+
+[UpdateInis.Uninst.Tweaks]
+%30%\msdos.sys,options,"systemreg=*",
+System.ini,386enh,"ConservativeSwapfileUsage=*",
+System.ini,386enh,"DMABufferSize=*",
+System.ini,386enh,"LocalLoadHigh=*",
+
+[SourceDisksNames]
+1=,,0
+
+[Strings]
+UninstallKey="Software\Microsoft\Windows\CurrentVersion\Uninstall\ServicePackTweaks"
+PackageName="Réglages du Service Pack non-officiel (Supprimer uniquement)"

@@ -1,0 +1,9 @@
+REGEDIT4
+
+; VM de reference QuickInstall ME : les CAB de Windows ME sont dans C:\WIN9X
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Setup]
+"SourcePath"="C:\\WIN9X\\"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion]
+"SourcePath"="C:\\WIN9X\\"
+

@@ -1,0 +1,93 @@
+; MSBATCH.INF - ISO Windows ME FR (pack WinMeFR)
+; Lu automatiquement par SETUP.EXE (dossier WIN9X). Installation personnalisee :
+; les ecrans restent affiches, les composants sont deja coches comme voulu.
+
+[BatchSetup]
+Version=3.0 (32-bit)
+
+[Version]
+Signature = "$CHICAGO$"
+AdvancedINF=2.5
+LayoutFile=layout.inf
+
+[Setup]
+Express=0
+InstallType=3
+OptionalComponents=1
+EBD=0
+Uninstall=0
+NoDirWarn=1
+ShowEula=0
+InstallDir="C:\WINDOWS"
+TimeZone="Romance"
+ProductKey="XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
+
+[OptionalComponents]
+"Accessibilité"=1
+"Options d'accessibilité"=1
+"Outils d'accessibilité"=1
+"Calculatrice"=1
+"Imaging"=1
+"Modèles de documents"=1
+"Paint"=1
+"Papiers peints du bureau"=1
+"Pointeurs de souris"=1
+"Porte-documents"=0
+"Fenêtres volantes"=1
+"Écrans de veille OpenGL"=1
+"Écrans de veille supplémentaires"=1
+"Carnet d'adresses"=0
+"Accès réseau à distance"=1
+"Connexion directe par câble"=1
+"HyperTerminal"=1
+"MSN Messenger Service"=0
+"NetMeeting"=0
+"Numéroteur téléphonique"=0
+"Partage de connexion Internet"=0
+"Réseau privé virtuel (VPN)"=0
+"Serveur d'accès réseau à dist."=0
+"Universal Plug and Play"=1
+"Jeux"=1
+"Jeux classiques"=1
+"Jeux Internet"=0
+"Jeux Plus!"=1
+"Compression audio"=1
+"Compression vidéo"=1
+"Contrôle du volume"=1
+"Exemples de sons"=1
+"Lecteur multimédia"=1
+"Macromedia Shockwave"=1
+"Macromedia Shockwave Flash"=1
+"Magnétophone"=1
+"Modèles de sons multimédias"=1
+"Dossiers compressés"=1
+"Moniteur système"=1
+"Observateur réseau"=1
+"Outils de compression de disque"=1
+"Presse-papiers"=1
+"Table de caractères"=1
+"Vumètre ressources système"=1
+"WinPopup"=1
+"Outlook Express"=0
+"Baltique"=1
+"Cyrillique"=1
+"Europe centrale"=1
+"Grec"=1
+"Turc"=1
+"AOL"=0
+"Au coeur de l'ordinateur"=1
+"Baseball"=1
+"Espace"=1
+"Fonds marins"=1
+"Jungle"=1
+"L'âge d'or"=1
+"Les animaux dangereux"=1
+"Les années 60 américaines"=1
+"Léonard de Vinci"=1
+"Mystère"=1
+"Nature"=1
+"Prise en charge des thèmes"=1
+"Science"=1
+"Sports"=1
+"Voyages"=1
+"Windows Millennium"=1

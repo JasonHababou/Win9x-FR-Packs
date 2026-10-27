@@ -1,0 +1,11 @@
+ImgBurn 2.5.8.0 - Pack Win98FR
+==============================
+IMGBURN.EXE = SetupImgBurn_2.5.8.0.exe (installeur NSIS officiel, anglais).
+Installation silencieuse : IMGBURN.EXE /S
+Compatible Windows 98 sans KernelEx (imports verifies). Sous 98, ImgBurn
+passe par l'interface ASPI : ASPI 4.71.2 est installe a l'etape [5/11].
+
+Francais : FRENCH.LNG = french.lng de download.imgburn.com/translations/
+french.zip (traduction de Stavroguine, la plus recente : faite pour la
+2.5.7.0 ; les rares textes ajoutes en 2.5.8.0 restent en anglais).
+install.bat le copie dans C:\Program Files\ImgBurn\Languages.

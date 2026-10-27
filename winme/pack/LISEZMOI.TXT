@@ -1,0 +1,44 @@
+PACK CORRECTIF WINDOWS ME FR (WinMeFR)
+======================================
+
+A installer sur un Windows Me francais tout juste installe depuis le CD
+d'origine. (Les CD "WinMe_FR" et "QuickInstall" du projet l'installent deja :
+inutile de le relancer.)
+
+Installation
+------------
+1. Inserez ce CD : le menu s'ouvre tout seul. Sinon, lancez AUTORUN.EXE,
+   ou INSTALL.BAT depuis le CD.
+2. Cliquez sur "Installer le pack Windows Me FR".
+3. Laissez le CD dans le lecteur jusqu'a la fin. Windows redemarre plusieurs
+   fois et l'installation reprend toute seule a chaque fois.
+4. Un message vous previent quand tout est termine.
+
+Le journal de l'installation est dans C:\WMEFR\JOURNAL.TXT.
+
+Contenu (8 etapes)
+------------------
+[1/8] Fichiers du CD de Windows copies dans C:\WINDOWS\OPTIONS\CABS (le CD
+      n'est plus demande ensuite), Internet Explorer 6 SP1 FR, Windows Media
+      Player 9 FR.
+[2/8] Correctifs IE6 et WMP9, MDAC 2.8 SP1 FR, Me SP 2.02 Beta 9 FR
+      (Service Pack non officiel).
+[3/8] Systeme : certificats racine 2020, KernelEx 4.5 FR (desactive par
+      defaut), Windows Script 5.7, fuseaux horaires a jour, correctif pour
+      processeurs recents (patcher9x), USB 2.0 et cles USB.
+[4/8] Extras : lecteur NTFS, Taskbar Shuffle, filtres Paint,
+      ASPI 4.71.2, police TrueType.
+[5/8] .NET Framework 1.1 SP1 FR (optionnel).
+[6/8] Pilotes chipset de la carte mere (Intel, VIA, SiS, nVidia) detectes
+      automatiquement.
+[7/8] Applications (optionnel) : 7-Zip, DAEMON Tools, Fraps, RetroZilla
+      (navigateur), SIV, QRes, Visual C++ 2005/2008, jeu de Tarot.
+[8/8] Correctif memoire PATCHMEM (plus de 512 Mo de RAM) et vrai mode
+      MS-DOS, comme sous Windows 98 (Demarrer > Arreter > "Redemarrer en
+      mode MS-DOS"). Tapez EXIT pour revenir a Windows.
+
+Ensuite
+-------
+- Installez les pilotes de votre carte graphique et de votre carte son.
+- Inserez le CD du pack 2 (Win98FR_Plus) : DirectX 9, logiciels, jeux et
+  outils de test.

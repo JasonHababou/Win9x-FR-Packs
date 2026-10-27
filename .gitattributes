@@ -1,0 +1,9 @@
+# Fichiers des packs : cp1252 + CRLF, a garder tels quels (pas de conversion par Git)
+win98/** -text
+winme/** -text
+pack2/** -text
+construction/_construction_me/pack/** -text
+construction/_construction_me/iso/** -text
+construction/_construction_me/me_ref/** -text
+construction/_construction_iso/pack_iso/** -text
+*.nsi -text

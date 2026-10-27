@@ -1,0 +1,68 @@
+; ============================================================
+; TAROT.INF - Pack Win98FR : Jeu de Tarot (Sybex, 2000, francais)
+; Le jeu (dossier JEU\) est copie dans C:\Jeux\Tarot par install.bat.
+; L'installeur InstallShield 3 d'origine (_SETUP.1, extrait avec
+; scratchpad\is3unz.py) est ecarte : il embarquait des DLL systeme
+; de 1996-1999 (COMDLG32.DLL de Windows 95, OLEAUT32, ADVPACK...),
+; toutes plus anciennes que celles de Windows 98 + SP3.0.
+; Ici : uniquement les 19 composants Visual Basic 6 absents de
+; Windows 98 (OCX + DLL de langue FR), drapeau 32 = jamais de
+; remplacement par une version plus ancienne, puis enregistrement.
+; VB6DockOCX.ocx (nom long, hors 8.3) est copie et enregistre par
+; install.bat.
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+CopyFiles=VB.Files
+RegisterOCXs=VB.Reg
+UpdateInis=Tarot.Lien
+
+[DestinationDirs]
+VB.Files=11
+
+[VB.Files]
+CMDLGFR.DLL,,,32
+COMDLG32.OCX,,,32
+GRID32.OCX,,,32
+MSCC2FR.DLL,,,32
+MSCH2FR.DLL,,,32
+MSCHRT20.OCX,,,32
+MSCMCFR.DLL,,,32
+MSCOMCT2.OCX,,,32
+MSCOMCTL.OCX,,,32
+MSHFGFR.DLL,,,32
+MSHFLXGD.OCX,,,32
+MSSTDFMT.DLL,,,32
+RCHTXFR.DLL,,,32
+RESEDIT.DLL,,,32
+RICHTX32.OCX,,,32
+STDFTFR.DLL,,,32
+THREED32.OCX,,,32
+VB6FR.DLL,,,32
+
+[VB.Reg]
+%11%\COMDLG32.OCX
+%11%\GRID32.OCX
+%11%\MSCHRT20.OCX
+%11%\MSCOMCT2.OCX
+%11%\MSCOMCTL.OCX
+%11%\MSHFLXGD.OCX
+%11%\RICHTX32.OCX
+%11%\THREED32.OCX
+%11%\MSSTDFMT.DLL
+
+; Cible en nom court : SETUP.INI coupe la ligne de commande au premier espace
+; ("C:\Jeux\Tarot\Jeu" + argument "de Tarot.exe", raccourci casse, GX240).
+[Tarot.Lien]
+setup.ini, progman.groups,, "group6=%GAMES_DESC%"
+setup.ini, group6,, """Jeu de Tarot"", ""C:\Jeux\Tarot\JEUDET~1.EXE"",,,, ""C:\Jeux\Tarot"""
+
+[SourceDisksNames]
+1=,,0
+
+[Strings]
+GAMES_DESC="Jeux"

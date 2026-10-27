@@ -1,0 +1,32 @@
+; Pack Win98FR (repris du pack WinMeFR, 2026-10-26) : lecteur NTFS Paragon UFSD corrige par SweetLow (fuites memoire,
+; nom et numero de volume) + module d'aide PNTFSHLP (memes fichiers que l'option
+; NTFS de QuickInstall), a la place de l'ancien PNTFS.VXD de 2003.
+; Configurateur FR (NTFSCFG.VBS) et DELPART dans C:\NTFS, raccourci sur le Bureau.
+[Version]
+Signature=$CHICAGO$
+[DefaultInstall]
+SmartReboot=N
+CustomDestination=CDS
+CopyFiles=CSF,CVF
+UpdateInis=UIS
+[CDS]
+49758=DSC,5
+[DSC]
+HKCU,"Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders","Desktop",,"%25%\Desktop"
+[CSF]
+DELPART.EXE
+PNTFS.ICO
+NTFSCFG.VBS
+UFSD.TXT
+PNTFSHLP.TXT
+[CVF]
+UFSD.VXD
+PNTFSHLP.VXD
+[UIS]
+SETUP.INI,progman.groups,,"Desktop="%49758%""
+SETUP.INI,Desktop,,"""Configurateur NTFS"",""""""%30%\NTFS\NTFSCFG.VBS""""""
+[DestinationDirs]
+CSF=30,NTFS
+CVF=12
+[SourceDisksNames]
+1=,,0

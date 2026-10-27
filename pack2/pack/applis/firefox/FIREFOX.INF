@@ -1,0 +1,33 @@
+; ============================================================
+; FIREFOX.INF - Pack Win98FR
+; Apres copie de FirefoxPortableESR dans C:\FIREFOX (install.bat) :
+;  - KernelEx : XUL.DLL de C:\FIREFOX en mode Windows XP SP3
+;    (WINXP3, apporte par la mise a jour KernelEx 4.5.2019.24 ;
+;    c'est le mode demande par la version portable)
+;  - raccourci "Firefox 31.8" sur le Bureau
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+CustomDestination=CDS
+AddReg=FF.Kex
+UpdateInis=FF.Lien
+
+[CDS]
+49758=DSC,5
+
+[DSC]
+HKCU,"Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders","Desktop",,"%25%\Bureau"
+
+[FF.Kex]
+HKLM,"Software\KernelEx\AppSettings\Configs","C:\FIREFOX\APP\FIREFOX\XUL.DLL",,"WINXP3"
+
+[FF.Lien]
+SETUP.INI,progman.groups,,"Desktop=%49758%"
+SETUP.INI,Desktop,,"""Firefox 31.8"",""""""C:\FIREFOX\FirefoxPortable.exe"""""""
+
+[SourceDisksNames]
+1=,,0

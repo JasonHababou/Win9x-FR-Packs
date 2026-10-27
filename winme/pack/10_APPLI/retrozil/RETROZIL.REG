@@ -1,0 +1,187 @@
+REGEDIT4
+
+; RetroZilla navigateur par defaut (pack Win98FR) : valeurs ecrites par RetroZilla
+; lui-meme quand on repond Yes a sa question (releve test12, 2026-10-20).
+
+[HKEY_LOCAL_MACHINE\Software\Classes\gopher\DefaultIcon]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE,0"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\gopher\shell\open\command]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE -osint -url \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\ftp\shell\open\command]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE -osint -url \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\ftp\DefaultIcon]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE,0"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\http\DefaultIcon]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE,0"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\http\shell\open\command]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE -osint -url \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\https\DefaultIcon]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE,0"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\https\shell\open\command]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE -osint -url \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\.htm]
+@="MozillaHTML"
+"Content Type"="text/html"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\.html]
+@="MozillaHTML"
+"Content Type"="text/html"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\.xml]
+@="MozillaXML"
+"Content Type"="text/xml"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\.shtml]
+@="MozillaHTML"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaHTML]
+@="HTML Document"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaHTML\shell]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaHTML\shell\open]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaHTML\shell\open\command]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE -osint -url \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaHTML\shell\edit]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaHTML\shell\edit\command]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE -edit \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaHTML\DefaultIcon]
+@="C:\\PROGRA~1\\RETROZ~1\\CHROME\\ICONS\\DEFAULT\\HTML-F~1.ICO,0"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXML]
+@="XML Document"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXML\shell]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXML\shell\open]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXML\shell\open\command]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE -osint -url \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXML\DefaultIcon]
+@="C:\\PROGRA~1\\RETROZ~1\\CHROME\\ICONS\\DEFAULT\\XML-FILE.ICO,0"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\.xht]
+@="MozillaXHTML"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\.xhtml]
+@="MozillaXHTML"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXHTML]
+@="XHTML Document"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXHTML\shell]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXHTML\shell\open]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXHTML\shell\open\command]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE -osint -url \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXHTML\DefaultIcon]
+@="C:\\PROGRA~1\\RETROZ~1\\CHROME\\ICONS\\DEFAULT\\MISC-F~1.ICO,0"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\.xul]
+@="MozillaXUL"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXUL]
+@="Mozilla XUL Document"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXUL\shell]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXUL\shell\open]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXUL\shell\open\command]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE -osint -chrome \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\MozillaXUL\DefaultIcon]
+@="C:\\PROGRA~1\\RETROZ~1\\CHROME\\ICONS\\DEFAULT\\XUL-FILE.ICO,0"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\chrome]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\chrome\shell]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\chrome\shell\open]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\chrome\shell\open\command]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE -osint -chrome \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\chrome\DefaultIcon]
+@="C:\\PROGRA~1\\RETROZ~1\\RETROZ~1.EXE,0"
+
+[HKEY_LOCAL_MACHINE\Software\Mozilla\Desktop]
+"isHandlingHTTP"="1"
+"isHandlingHTTPS"="1"
+"isHandlingFTP"="1"
+"isHandlingCHROME"="1"
+"isHandlingGOPHER"="1"
+"isHandlingHTML"="1"
+"isHandlingXML"="1"
+"isHandlingXHTML"="1"
+"isHandlingXUL"="1"
+"showDialog"="1"
+"haveBeenSet"="1"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\.htm"="htmlfile"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\.html"="htmlfile"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\.shtml"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\MozillaHTML\\shell\\open\\command"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\MozillaHTML\\DefaultIcon"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\.xml"="xmlfile"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\MozillaXML\\shell\\open\\command"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\MozillaXML\\DefaultIcon"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\.xht"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\.xhtml"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\MozillaXHTML\\shell\\open\\command"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\MozillaXHTML\\DefaultIcon"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\.xul"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\MozillaXUL\\shell\\open\\command"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\MozillaXUL\\DefaultIcon"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\http\\shell\\open\\command"="\"C:\\PROGRA~1\\INTERN~1\\iexplore.exe\" -nohome"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\http\\shell\\open\\ddeexec"="\"%1\",,-1,0,,,,"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\http\\shell\\open\\ddeexec[NoActivateHandler]"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\http\\shell\\open\\ddeexec\\Application"="IExplore"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\http\\shell\\open\\ddeexec\\Topic"="WWW_OpenURL"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\http\\DefaultIcon"="C:\\WINDOWS\\SYSTEM\\url.dll,0"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\https\\shell\\open\\command"="\"C:\\PROGRA~1\\INTERN~1\\iexplore.exe\" -nohome"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\https\\shell\\open\\ddeexec"="\"%1\",,-1,0,,,,"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\https\\shell\\open\\ddeexec[NoActivateHandler]"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\https\\shell\\open\\ddeexec\\Application"="IExplore"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\https\\shell\\open\\ddeexec\\Topic"="WWW_OpenURL"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\https\\DefaultIcon"="C:\\WINDOWS\\SYSTEM\\url.dll,0"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\ftp\\shell\\open\\command"="\"C:\\PROGRA~1\\INTERN~1\\iexplore.exe\" %1"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\ftp\\shell\\open\\ddeexec"="\"%1\",,-1,0,,,,"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\ftp\\shell\\open\\ddeexec[NoActivateHandler]"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\ftp\\shell\\open\\ddeexec\\Application"="IExplore"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\ftp\\shell\\open\\ddeexec\\Topic"="WWW_OpenURL"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\ftp\\DefaultIcon"="C:\\WINDOWS\\SYSTEM\\url.dll,0"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\chrome\\shell\\open\\command"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\chrome\\DefaultIcon"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\gopher\\shell\\open\\command"="\"C:\\PROGRA~1\\INTERN~1\\iexplore.exe\" -nohome"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\gopher\\shell\\open\\ddeexec"="\"%1\",,-1,0,,,,"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\gopher\\shell\\open\\ddeexec[NoActivateHandler]"=""
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\gopher\\shell\\open\\ddeexec\\Application"="IExplore"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\gopher\\shell\\open\\ddeexec\\Topic"="WWW_OpenURL"
+"HKEY_LOCAL_MACHINE\\Software\\Classes\\gopher\\DefaultIcon"="C:\\WINDOWS\\SYSTEM\\url.dll,0"
+
+[-HKEY_LOCAL_MACHINE\Software\Classes\http\shell\open\ddeexec]
+
+[-HKEY_LOCAL_MACHINE\Software\Classes\https\shell\open\ddeexec]
+
+[-HKEY_LOCAL_MACHINE\Software\Classes\ftp\shell\open\ddeexec]
+
+[-HKEY_LOCAL_MACHINE\Software\Classes\gopher\shell\open\ddeexec]
+
+; IE ne demande plus a redevenir le navigateur par defaut
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Check_Associations"="no"

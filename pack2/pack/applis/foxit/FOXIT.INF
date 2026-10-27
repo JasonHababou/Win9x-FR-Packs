@@ -1,0 +1,36 @@
+; ============================================================
+; FOXIT.INF - Pack Win98FR : Foxit Reader 1.3 (lecteur PDF, sans
+; installation, ANGLAIS : pas de version francaise de la 1.3).
+; Source : Win3x.org, Foxit_Reader13.zip (CD Freelog HS 31).
+; Copie dans Program Files\Foxit + raccourci Programmes (nom de dossier
+; sans espace ni guillemets : un dossier entre guillemets dans
+; DestinationDirs n'etait pas cree, raccourci casse au test).
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+CustomDestination=CDS
+CopyFiles=Foxit.Files
+UpdateInis=Foxit.Lien
+
+[CDS]
+49001=ProgramFilesDir,5
+
+[ProgramFilesDir]
+HKLM,"Software\Microsoft\Windows\CurrentVersion","ProgramFilesDir","","%24%\Program Files"
+
+[DestinationDirs]
+Foxit.Files=49001,Foxit
+
+[Foxit.Files]
+FOXIT13.EXE
+
+[Foxit.Lien]
+setup.ini, progman.groups,, "Foxit=Foxit Reader"
+setup.ini, Foxit,, """Foxit Reader"", ""%49001%\Foxit\FOXIT13.EXE"""
+
+[SourceDisksNames]
+1=,,0

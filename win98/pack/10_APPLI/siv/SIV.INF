@@ -1,0 +1,51 @@
+; ============================================================
+; SIV.INF - Pack Win98FR : SIV 5.88 (System Information Viewer, Ray
+; Hinchliffe, rh-software.com, gratuit pour un usage personnel), version SIV32L pour Windows 9x.
+; Materiel complet : processeur, memoire (barrettes, timings), cartes,
+; PCI, USB, disques, capteurs. Anglais. Seulement les fichiers utiles
+; sous 9x (20 Mo au lieu de 104) ; archive complete d'origine :
+; Sources\outils_materiel\siv_v5.88.zip (rh-software.com/zip).
+; Au premier lancement, SIV copie SMARTVSD.VXD (pilote SMART des
+; disques, Microsoft) et propose de redemarrer : facultatif.
+; Copie dans Program Files\SIV + raccourci menu Programmes\SIV.
+; Pack 1 et ISO (case SIV), etape [10/11]. 5.84 et 5.88 testes QEMU 2026-10-19.
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+CustomDestination=CDS
+CopyFiles=SIV.Files
+UpdateInis=SIV.Lien
+
+[CDS]
+49001=ProgramFilesDir,5
+
+[ProgramFilesDir]
+HKLM,"Software\Microsoft\Windows\CurrentVersion","ProgramFilesDir","","%24%\Program Files"
+
+[DestinationDirs]
+SIV.Files=49001,SIV
+
+[SIV.Files]
+CPUSAMP.TXT
+MONDEVS.TXT
+PCIDEVS.TXT
+PCMDEVS.TXT
+PNPDEVS.TXT
+SIV310.DLL
+SIV32L.EXE
+SIVDEF.TXT
+SIVRES.DLL
+SIVW9X.DLL
+UIDDEVS.TXT
+USBDEVS.TXT
+
+[SIV.Lien]
+setup.ini, progman.groups,, "SIV=SIV"
+setup.ini, SIV,, """SIV (informations systeme)"", ""%49001%\SIV\SIV32L.EXE"""
+
+[SourceDisksNames]
+1=,,0

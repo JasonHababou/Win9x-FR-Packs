@@ -1,0 +1,6 @@
+Kit de la VM de reference QuickInstall Windows ME FR
+
+Apres une installation propre de ME (CAB copies dans C:\WIN9X avant Setup) :
+Executer > D:\ETAPE1.BAT, puis apres le redemarrage D:\ETAPE2.BAT, puis D:\ETAPE3.BAT.
+Chaque etape redemarre Windows. Journal : C:\MEREF.TXT.
+Ensuite : arret propre, puis capture avec sysprep.py (QuickInstall).

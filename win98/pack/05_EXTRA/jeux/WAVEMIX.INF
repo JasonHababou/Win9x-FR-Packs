@@ -1,0 +1,41 @@
+[general]
+ShowDevices=0
+WaveOutDevice=-1
+[WinNT:default]
+Remix=1
+GoodWavePos=0
+WaveBlocks=3
+SamplesPerSec=11
+[WinNT:Windows Sound System Playback]
+Remix=1
+GoodWavePos=1
+WaveBlocks=4
+SamplesPerSec=22
+[WinNT:MultiSound Wave Out]
+Remix=2
+GoodWavePos=1
+WaveBlocks=3
+[WinNT:SB16 Wave Out]
+Remix=1
+GoodWavePos=0
+WaveBlocks=5
+SamplesPerSec=22
+[WinNT:SBPro Wave Out]
+Remix=1
+GoodWavePos=0
+WaveBlocks=5
+[WinNT:Media Vision Waveform Output]
+Remix=1
+GoodWavePos=0
+WaveBlocks=4
+[WinNT:MVI Pro Audio/CDPC Wave Output]
+Remix=1
+GoodWavePos=0
+WaveBlocks=4
+[WinNT:UltraSound Waveform Output]
+Remix=2
+GoodWavePos=0
+WaveBlocks=3
+SamplesPerSec=11
+[not compatible]
+Wave driver for PC Speaker=1

@@ -1,0 +1,770 @@
+; Win98FR : couche U98SESP3.66 filtree (fichiers 3.66 sans perte de FR).
+; Genere par _construction_outils\build_366fr.py - ne pas modifier a la main.
+; Exclus : DOS/aide/INF EN, IO.SYS, VMM32.VXD, outils EN, date US, effacement de
+; Setup\Updates, MSIEXEC EN, NOVOLTRK, convmem/file64. Detail : RAPPORT_366FR.TXT
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+CustomDestination=CDD
+CopyFiles=CMD,CHT,CIO,CMA,CJT,CWS,C32,CTC,CTR,CVC,CVM
+RegisterOCXs=RNF
+AddReg=ARH
+DelReg=DRH
+UpdateInis=UIF
+
+[CDD]
+49001=ProgramFilesDir,5
+35353=CommonFilesDir,5
+
+[ProgramFilesDir]
+HKLM,"%CurrentVersion%","ProgramFilesDir","","%24%\Program Files"
+
+[CommonFilesDir]
+HKLM,"%CurrentVersion%","CommonFilesDir","","%49001%\Common Files"
+
+[DestinationDirs]
+CMD=13
+CHT=49001,ACCESS~1\HYPERT~1
+CIO=12
+CMA=10
+CJT=35353,MICROS~1\REPLMAN
+CWS=11
+C32=10,SYSTEM32\DRIVERS
+CTC=35353,MICROS~1\TEXTCONV
+CTR=35353,MICROS~1\TRIEDIT
+CVC=35353,MICROS~1\VC
+CVM=22
+
+[CMD]
+EXTRACT.EXE,,,1056
+
+[CHT]
+HTICONS.DLL,,,1056
+HYPERTRM.DLL,,,1056
+HYPERTRM.EXE,,,1056
+
+[CIO]
+CDFS.VXD,,,1056
+CDTSD.VXD,,,1056
+CDVSD.VXD,,,1056
+DISKTSD.VXD,,,1056
+DISKVSD.VXD,,,1056
+NTMAPHLP.PDR,,,1056
+SCSI1HLP.VXD,,,1056
+VOLTRACK.VXD,,,1056
+
+[CMA]
+CVTAPLOG.EXE,,,1056
+DBLBUFF.SYS,,,1056
+DEFRAG.EXE,,,1056
+EXTRACT.EXE,,,1056
+HH.EXE,,,1056
+NOTEPAD.EXE,,,36
+REGTLIB.EXE
+SCANDSKW.EXE,,,1056
+SNDVOL32.EXE,,,36
+SNMP.EXE,,,1056
+SNMPAPI.DLL,,,1056
+SYSMON.EXE,,,36
+TWAIN.DLL,,,1056
+TWAIN_32.DLL,,,1056
+TWUNK_16.EXE,,,1056
+TWUNK_32.EXE,,,1056
+
+[CJT]
+MSRPFS40.DLL
+MSTRAI40.EXE
+MSTRAN40.EXE
+
+[CWS]
+ADVPACK.DLL,,,1056
+ASYCFILT.DLL,,,1056
+CAPICOM.DLL
+COMCAT.DLL,,,1056
+COMDLG32.DLL,,,36
+CRYPTDLG.DLL
+CTRAS.DLL,,,1056
+DBGHELP.DLL
+DESK.CPL,,,1056
+DSKMAINT.DLL,,,1056
+GDI32.DLL,,,1056
+GDIPLUS.DLL
+GETUNAME.DLL,,,1056
+HHSETUP.DLL
+HLINK.DLL,,,1056
+IMAGEHLP.DLL,,,4
+ITIRCL.DLL,,,1056
+ITSS.DLL,,,1056
+KERNEL32.DLL,,,36
+MFC40.DLL,,,1056
+MSASN1.DLL
+MSFTEDIT.DLL
+MSIZAP.EXE
+MSSTDFMT.DLL
+MSVBVM60.DLL
+MSVCRT20.DLL,,,1056
+PDH.DLL,,,1056
+PROXYCFG.EXE
+RPCLTSPX.DLL,,,1056
+SETUPAPI.DLL,,,4
+T2EMBED.DLL
+USBMON.DLL,,,1056
+VB40016.DLL
+VB40032.DLL
+VBRUN100.DLL
+VBRUN200.DLL
+VBRUN300.DLL
+VNETBIOS.VXD,,,1056
+WINHTTP.DLL
+WINHTTP5.DLL
+XENROLL.DLL
+MSEXCL35.DLL
+MSJT4JLT.DLL
+MSLTUS35.DLL
+MSPDOX35.DLL
+MSRPFS35.DLL
+MSTEXT35.DLL
+MSEXCH40.DLL
+MSEXCL40.DLL
+MSJET40.DLL
+MSJETOL1.DLL
+MSJINT40.DLL
+MSJTER40.DLL
+MSJTES40.DLL
+MSLTUS40.DLL
+MSPBDE40.DLL
+MSRCLR40.DLL
+MSRD2X40.DLL
+MSRD3X40.DLL
+MSRECR40.DLL
+MSREPL40.DLL
+MSTEXT40.DLL
+MSWDAT10.DLL
+MSWSTR10.DLL
+MSXBDE40.DLL
+ODBCJI32.DLL
+ODBCJT32.DLL,,,1056
+ODDBSE32.DLL
+ODEXL32.DLL
+ODFOX32.DLL
+ODPDX32.DLL
+ODTEXT32.DLL
+MSAATEXT.DLL
+OLEACC.DLL
+OLEACCRC.DLL
+MSXML.DLL
+MSXML2.DLL
+MSXML2A.DLL
+MSXML2R.DLL
+MSXML3.DLL
+MSXML4.DLL
+MSXML4A.DLL
+MSXML4R.DLL
+ATL.DLL
+ATL80.DLL
+MFC80.DLL
+MFCM80.DLL
+MSVCM80.DLL
+MSVCP80.DLL
+MSVCR80.DLL
+ATL70.DLL
+ATL71.DLL
+MFC70.DLL
+MFC71.DLL
+MSVCI70.DLL
+MSVCP70.DLL
+MSVCP71.DLL
+MSVCR70.DLL
+MSVCR71.DLL
+COMCT232.OCX
+COMCT332.OCX
+COMCTL32.OCX
+COMDLG32.OCX
+MCI32.OCX
+MSCOMCT2.OCX
+MSCOMCTL.OCX
+MSCOMM32.OCX
+MSFLXGRD.OCX
+MSINET.OCX
+MSMASK32.OCX
+MSWINSCK.OCX
+PICCLP32.OCX
+RICHTX32.OCX
+TABCTL32.OCX
+NDIS.VXD,,,1056
+SMCLIB.VXD,,,1056
+VIP.386,,,1056
+
+[C32]
+SMCLIB.SYS,,,1056
+USBPRINT.SYS,,,1056
+WMILIB.SYS,,,1056
+
+[CTC]
+HTML32.CNV,,,1056
+MSCONV97.DLL,,,1056
+MSWRD632.WPC,,,1056
+MSWRD832.CNV,,,1056
+
+[CTR]
+DHTMLED.OCX
+
+[CVC]
+MSDIA80.DLL
+
+[CVM]
+IFSMGR.VXD
+
+[RNF]
+%11%\CAPICOM.DLL
+%11%\CRYPTDLG.DLL
+%11%\CRYPTUI.DLL
+%11%\HHCTRL.OCX
+%11%\IPROP.DLL
+%11%\ITIRCL.DLL
+%11%\ITSS.DLL
+%11%\MSAATEXT.DLL
+%11%\MSCAT32.DLL
+%11%\MSEXCH40.DLL
+%11%\MSEXCL40.DLL
+%11%\MSJET40.DLL
+%11%\MSJTES40.DLL
+%11%\MSLTUS40.DLL
+%11%\MSPBDE40.DLL
+%11%\MSRCLR40.DLL
+%11%\MSRD2X40.DLL
+%11%\MSRD3X40.DLL
+%11%\MSSIP32.DLL
+%11%\MSSTDFMT.DLL
+%11%\MSTEXT40.DLL
+%11%\MSVBVM50.DLL
+%11%\MSVBVM60.DLL
+%11%\MSXBDE40.DLL
+%11%\MSXML.DLL
+%11%\MSXML2.DLL
+%11%\MSXML3.DLL
+%11%\MSXML4.DLL
+%11%\OLEACC.DLL
+%11%\OLEAUT32.DLL
+%11%\OLEPRO32.DLL
+%11%\RPCRT4.DLL
+%11%\RSAENH.DLL
+%11%\SCHANNEL.DLL
+%11%\SOFTPUB.DLL
+%11%\WINHTTP5.DLL
+%11%\WINHTTP.DLL
+%11%\WINTRUST.DLL
+%11%\XENROLL.DLL
+%35353%\MICROS~1\TRIEDIT\DHTMLED.OCX
+%35353%\MICROS~1\TRIEDIT\TRIEDIT.DLL
+%35353%\MICROS~1\VC\MSDIA80.DLL
+
+[ARH]
+HKCR,CLSID,,,{0000031A-0000-0000-C000-000000000046}
+HKCR,CLSID\CLSID,,,{0000031A-0000-0000-C000-000000000046}
+HKCR,CLSID\{0000031A-0000-0000-C000-000000000046},,,ClassMoniker
+HKCR,CLSID\{0000031A-0000-0000-C000-000000000046}\InprocServer32,,,OLE32.DLL
+HKCR,CLSID\{0000031A-0000-0000-C000-000000000046}\ProgID,,,clsid
+HKCR,CLSID\{00000320-0000-0000-C000-000000000046},,,oleprx32_PSFactory
+HKCR,CLSID\{00000320-0000-0000-C000-000000000046}\InprocServer32,,,OLE32.DLL
+HKCR,CLSID\{00000327-0000-0000-C000-000000000046},,,ObjrefMoniker
+HKCR,CLSID\{00000327-0000-0000-C000-000000000046}\InprocServer32,,,OLE32.DLL
+HKCR,CLSID\{00000327-0000-0000-C000-000000000046}\ProgId,,,objref
+HKCR,CLSID\{bdc67890-4fc0-11d0-a805-00aa006d2ea4}\InstalledVersion,,,"4,71,0,3328"
+HKCR,file\CLSID,,,{00000303-0000-0000-C000-000000000046}
+HKCR,Interface\{0000010D-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{0000010e-0000-0000-C000-000000000046},,,IDataObject
+HKCR,Interface\{0000010e-0000-0000-C000-000000000046}\NumMethods,,,12
+HKCR,Interface\{0000010e-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{0000011D-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{0000011E-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000126-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000127-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000128-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000129-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{0000012A-0000-0000-C000-000000000046},,,IContinue
+HKCR,Interface\{0000012A-0000-0000-C000-000000000046}\NumMethods,,,4
+HKCR,Interface\{0000012A-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000131-0000-0000-C000-000000000046},,,IRemUnknown
+HKCR,Interface\{00000131-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000132-0000-0000-C000-000000000046},,,IObjServer
+HKCR,Interface\{00000132-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000133-0000-0000-C000-000000000046},,,IOSCM
+HKCR,Interface\{00000133-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000134-0000-0000-C000-000000000046},,,IRunDown
+HKCR,Interface\{00000134-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000135-0000-0000-C000-000000000046},,,IInterfaceFromWindowProp
+HKCR,Interface\{00000135-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000136-0000-0000-C000-000000000046},,,IDSCM
+HKCR,Interface\{00000136-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000138-0000-0000-C000-000000000046},,,IPropertyStorage
+HKCR,Interface\{00000138-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000139-0000-0000-C000-000000000046},,,IEnumSTATPROPSTG
+HKCR,Interface\{00000139-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{0000013a-0000-0000-C000-000000000046},,,IPropertySetStorage
+HKCR,Interface\{0000013a-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{0000013b-0000-0000-C000-000000000046},,,IEnumSTATPROPSETSTG
+HKCR,Interface\{0000013b-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000140-0000-0000-C000-000000000046},,,IClassActivator
+HKCR,Interface\{00000140-0000-0000-C000-000000000046}\NumMethods,,,4
+HKCR,Interface\{00000140-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{00000141-0000-0000-C000-000000000046},,,IDLLHost
+HKCR,Interface\{00000141-0000-0000-C000-000000000046}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{0C733A30-2A1C-11CE-ADE5-00AA0044773D},,,ISequentialStream
+HKCR,Interface\{0C733A30-2A1C-11CE-ADE5-00AA0044773D}\NumMethods,,,5
+HKCR,Interface\{0C733A30-2A1C-11CE-ADE5-00AA0044773D}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{260613d0-1655-11d0-af92-00aa00b50686},,,IRemoteActivator
+HKCR,Interface\{260613d0-1655-11d0-af92-00aa00b50686}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{4a8df970-8d9a-11cf-8827-00aa00b569f5},,,IDocfileAsyncConnectionPoint
+HKCR,Interface\{4a8df970-8d9a-11cf-8827-00aa00b569f5}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{99caf010-415e-11cf-8814-00aa00b569f5},,,IFillLockBytes
+HKCR,Interface\{99caf010-415e-11cf-8814-00aa00b569f5}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{a9d758a0-4617-11cf-95fc-00aa00680db4},,,IProgressNotify
+HKCR,Interface\{a9d758a0-4617-11cf-95fc-00aa00680db4}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{B196B284-BAB4-101A-B69C-00AA00341D07},,,IConnectionPointContainer
+HKCR,Interface\{B196B284-BAB4-101A-B69C-00AA00341D07}\NumMethods,,,5
+HKCR,Interface\{B196B284-BAB4-101A-B69C-00AA00341D07}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{B196B285-BAB4-101A-B69C-00AA00341D07},,,IEnumConnectionPoints
+HKCR,Interface\{B196B285-BAB4-101A-B69C-00AA00341D07}\NumMethods,,,7
+HKCR,Interface\{B196B285-BAB4-101A-B69C-00AA00341D07}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{B196B286-BAB4-101A-B69C-00AA00341D07},,,IConnectionPoint
+HKCR,Interface\{B196B286-BAB4-101A-B69C-00AA00341D07}\NumMethods,,,8
+HKCR,Interface\{B196B286-BAB4-101A-B69C-00AA00341D07}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{B196B287-BAB4-101A-B69C-00AA00341D07},,,IEnumConnections
+HKCR,Interface\{B196B287-BAB4-101A-B69C-00AA00341D07}\NumMethods,,,7
+HKCR,Interface\{B196B287-BAB4-101A-B69C-00AA00341D07}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{de2eacd0-9c9d-11cf-882a-00aa00b569f5},,,IFIllInfo
+HKCR,Interface\{de2eacd0-9c9d-11cf-882a-00aa00b569f5}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{F29F6BC0-5021-11CE-AA15-00006901293F},,,IROTData
+HKCR,Interface\{F29F6BC0-5021-11CE-AA15-00006901293F}\NumMethods,,,4
+HKCR,Interface\{F29F6BC0-5021-11CE-AA15-00006901293F}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{F4F569D0-593B-101A-B569-08002B2DBF7A},,,IServerHandler
+HKCR,Interface\{F4F569D0-593B-101A-B569-08002B2DBF7A}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,Interface\{F4F569D1-593B-101A-B569-08002B2DBF7A},,,IClientSiteHandler
+HKCR,Interface\{F4F569D1-593B-101A-B569-08002B2DBF7A}\ProxyStubClsid32,,,{00000320-0000-0000-C000-000000000046}
+HKCR,objref,,,"URL:Objref Protocol"
+HKCR,objref\CLSID,,,{00000327-0000-0000-C000-000000000046}
+HKLM,"%CurrentVersion%","CacheWriteDelay",0x10001,2000
+HKLM,"%CurrentVersion%","RegDone",,"1"
+HKLM,"%CurrentVersion%\App Paths\HH.EXE",,,"%10%\HH.EXE"
+HKLM,"%CurrentVersion%\App Paths\HH.EXE",Path,,"%10%"
+HKLM,"%CurrentVersion%\Explorer","DisableFlushWrites",1,01,00,00,00
+HKLM,"%CurrentVersion%\Explorer","UseCopyMaxBufferSize",1,01,00,00,00
+HKLM,"%CurrentVersion%\RunOnce","COMCTL32.DLL...",,"%11%\REGSVR32.EXE /S %11%\COMCTL32.DLL"
+HKLM,"%CurrentVersion%\RunOnce","MSFTEDIT.DLL...",,"%11%\REGSVR32.EXE /S %11%\MSFTEDIT.DLL"
+HKLM,"%CurrentVersion%\RunOnce","MSJETOLEDB40.DLL...",,"%11%\REGSVR32.EXE /S %11%\MSJETOLEDB40.DLL"
+HKLM,"%CurrentVersion%\RunOnce","REGTLIB.EXE...",,"%25%\REGTLIB.EXE /Q %11%\RICHED20.DLL"
+HKLM,"%CurrentVersion%\RunOnce","REGTLIB.EXE...",,"%25%\REGTLIB.EXE /Q %11%\STDOLE2.TLB"
+HKLM,"%CurrentVersion%\RunOnce","SECUR32.DLL...",,"%11%\REGSVR32.EXE /S %11%\SECUR32.DLL"
+HKLM,"%CurrentVersion%\Setup","LogLevel",0x10001,ff,ff,00,20
+HKLM,"%CurrentVersion%\SharedDLLs","%11%\SECUR32.DLL",0x00010001,01,00,00,00
+HKLM,"Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436}\Implemented Categories\{7DD95801-9882-11CF-9FA9-00AA006C42C4}",,0x00000012
+HKLM,"Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436}\Implemented Categories\{7DD95802-9882-11CF-9FA9-00AA006C42C4}",,0x00000012
+HKLM,"Software\Microsoft\Advanced INF Setup","AdvpackLogFile",,"LOGFILES.LOG"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData\{9BA61D3F-E73A-11D0-8CD2-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData\{9BA61D3F-E73A-11D0-8CD2-00C04FC295EE}",FuncName,0x00000000,CryptSIPCreateIndirectData
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData\{C689AAB8-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData\{C689AAB8-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPCreateIndirectData
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData\{C689AAB9-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData\{C689AAB9-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPCreateIndirectData
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData\{C689AABA-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData\{C689AABA-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPCreateIndirectData
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData\{DE351A42-8E59-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData\{DE351A42-8E59-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPCreateIndirectData
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData\{DE351A43-8E59-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllCreateIndirectData\{DE351A43-8E59-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPCreateIndirectData
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg\{9BA61D3F-E73A-11D0-8CD2-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg\{9BA61D3F-E73A-11D0-8CD2-00C04FC295EE}",FuncName,0x00000000,CryptSIPGetSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg\{C689AAB8-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg\{C689AAB8-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPGetSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg\{C689AAB9-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg\{C689AAB9-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPGetSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg\{C689AABA-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg\{C689AABA-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPGetSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg\{DE351A42-8E59-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg\{DE351A42-8E59-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPGetSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg\{DE351A43-8E59-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllGetSignedDataMsg\{DE351A43-8E59-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPGetSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg\{9BA61D3F-E73A-11D0-8CD2-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg\{9BA61D3F-E73A-11D0-8CD2-00C04FC295EE}",FuncName,0x00000000,CryptSIPPutSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg\{C689AAB8-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg\{C689AAB8-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPPutSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg\{C689AAB9-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg\{C689AAB9-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPPutSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg\{C689AABA-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg\{C689AABA-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPPutSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg\{DE351A42-8E59-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg\{DE351A42-8E59-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPPutSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg\{DE351A43-8E59-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllPutSignedDataMsg\{DE351A43-8E59-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPPutSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg\{9BA61D3F-E73A-11D0-8CD2-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg\{9BA61D3F-E73A-11D0-8CD2-00C04FC295EE}",FuncName,0x00000000,CryptSIPRemoveSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg\{C689AAB8-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg\{C689AAB8-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPRemoveSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg\{C689AAB9-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg\{C689AAB9-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPRemoveSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg\{C689AABA-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg\{C689AABA-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPRemoveSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg\{DE351A42-8E59-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg\{DE351A42-8E59-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPRemoveSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg\{DE351A43-8E59-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllRemoveSignedDataMsg\{DE351A43-8E59-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPRemoveSignedDataMsg
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData\{9BA61D3F-E73A-11D0-8CD2-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData\{9BA61D3F-E73A-11D0-8CD2-00C04FC295EE}",FuncName,0x00000000,CryptSIPVerifyIndirectData
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData\{C689AAB8-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData\{C689AAB8-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPVerifyIndirectData
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData\{C689AAB9-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData\{C689AAB9-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPVerifyIndirectData
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData\{C689AABA-8E78-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData\{C689AABA-8E78-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPVerifyIndirectData
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData\{DE351A42-8E59-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData\{DE351A42-8E59-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPVerifyIndirectData
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData\{DE351A43-8E59-11D0-8C47-00C04FC295EE}",Dll,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 0\CryptSIPDllVerifyIndirectData\{DE351A43-8E59-11D0-8C47-00C04FC295EE}",FuncName,0x00000000,CryptSIPVerifyIndirectData
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2000",FuncName,0x00000000,"WVTAsn1SpcSpAgencyInfoDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2001",FuncName,0x00000000,"WVTAsn1SpcMinimalCriteriaInfoDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2002",FuncName,0x00000000,"WVTAsn1SpcFinancialCriteriaInfoDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2003",FuncName,0x00000000,"WVTAsn1SpcIndirectDataContentDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2004",FuncName,0x00000000,"WVTAsn1SpcPeImageDataDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2005",FuncName,0x00000000,"WVTAsn1SpcLinkDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2006",FuncName,0x00000000,"WVTAsn1SpcStatementTypeDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2007",FuncName,0x00000000,"WVTAsn1SpcSpOpusInfoDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2008",FuncName,0x00000000,"WVTAsn1SpcLinkDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2009",FuncName,0x00000000,"WVTAsn1SpcLinkDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2130",FuncName,0x00000000,"WVTAsn1SpcSigInfoDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2221",FuncName,0x00000000,"WVTAsn1CatNameValueDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\#2222",FuncName,0x00000000,"WVTAsn1CatMemberInfoDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.12.2.1",FuncName,0x00000000,"WVTAsn1CatNameValueDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.12.2.2",FuncName,0x00000000,"WVTAsn1CatMemberInfoDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.2.1.10",FuncName,0x00000000,"WVTAsn1SpcSpAgencyInfoDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.2.1.11",FuncName,0x00000000,"WVTAsn1SpcStatementTypeDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.2.1.12",FuncName,0x00000000,"WVTAsn1SpcSpOpusInfoDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.2.1.15",FuncName,0x00000000,"WVTAsn1SpcPeImageDataDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.2.1.20",FuncName,0x00000000,"WVTAsn1SpcLinkDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.2.1.25",FuncName,0x00000000,"WVTAsn1SpcLinkDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.2.1.26",FuncName,0x00000000,"WVTAsn1SpcMinimalCriteriaInfoDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.2.1.27",FuncName,0x00000000,"WVTAsn1SpcFinancialCriteriaInfoDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.2.1.28",FuncName,0x00000000,"WVTAsn1SpcLinkDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.2.1.30",FuncName,0x00000000,"WVTAsn1SpcSigInfoDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllDecodeObject\1.3.6.1.4.1.311.2.1.4",FuncName,0x00000000,"WVTAsn1SpcIndirectDataContentDecode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2000",FuncName,0x00000000,"WVTAsn1SpcSpAgencyInfoEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2001",FuncName,0x00000000,"WVTAsn1SpcMinimalCriteriaInfoEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2002",FuncName,0x00000000,"WVTAsn1SpcFinancialCriteriaInfoEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2003",FuncName,0x00000000,"WVTAsn1SpcIndirectDataContentEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2004",FuncName,0x00000000,"WVTAsn1SpcPeImageDataEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2005",FuncName,0x00000000,"WVTAsn1SpcLinkEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2006",FuncName,0x00000000,"WVTAsn1SpcStatementTypeEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2007",FuncName,0x00000000,"WVTAsn1SpcSpOpusInfoEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2008",FuncName,0x00000000,"WVTAsn1SpcLinkEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2009",FuncName,0x00000000,"WVTAsn1SpcLinkEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2130",FuncName,0x00000000,"WVTAsn1SpcSigInfoEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2221",FuncName,0x00000000,"WVTAsn1CatNameValueEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\#2222",FuncName,0x00000000,"WVTAsn1CatMemberInfoEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.12.2.1",FuncName,0x00000000,"WVTAsn1CatNameValueEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.12.2.2",FuncName,0x00000000,"WVTAsn1CatMemberInfoEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.2.1.10",FuncName,0x00000000,"WVTAsn1SpcSpAgencyInfoEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.2.1.11",FuncName,0x00000000,"WVTAsn1SpcStatementTypeEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.2.1.12",FuncName,0x00000000,"WVTAsn1SpcSpOpusInfoEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.2.1.15",FuncName,0x00000000,"WVTAsn1SpcPeImageDataEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.2.1.20",FuncName,0x00000000,"WVTAsn1SpcLinkEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.2.1.25",FuncName,0x00000000,"WVTAsn1SpcLinkEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.2.1.26",FuncName,0x00000000,"WVTAsn1SpcMinimalCriteriaInfoEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.2.1.27",FuncName,0x00000000,"WVTAsn1SpcFinancialCriteriaInfoEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.2.1.28",FuncName,0x00000000,"WVTAsn1SpcLinkEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.2.1.30",FuncName,0x00000000,"WVTAsn1SpcSigInfoEncode"
+HKLM,"Software\Microsoft\Cryptography\OID\EncodingType 1\CryptDllEncodeObject\1.3.6.1.4.1.311.2.1.4",FuncName,0x00000000,"WVTAsn1SpcIndirectDataContentEncode"
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\CertCheck\{00AAC56B-CD44-11D0-8CC2-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\CertCheck\{189A3842-3041-11D1-85E1-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\CertCheck\{5555C2CD-17FB-11D1-85C4-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\CertCheck\{573E31F8-AABA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\CertCheck\{573E31F8-DDBA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\CertCheck\{64B9D180-8DA2-11CF-8736-00AA00A485EB}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\CertCheck\{C6B2E8D0-E005-11CF-A134-00C04FD7BF43}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\CertCheck\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\CertCheck\{FC451C16-AC75-11D1-B4B8-00C04FB66EA0}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Certificate\{573E31F8-AABA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Certificate\{FC451C16-AC75-11D1-B4B8-00C04FB66EA0}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Cleanup\{00AAC56B-CD44-11D0-8CC2-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Cleanup\{189A3842-3041-11D1-85E1-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Cleanup\{5555C2CD-17FB-11D1-85C4-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Cleanup\{573E31F8-AABA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Cleanup\{573E31F8-DDBA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Cleanup\{64B9D180-8DA2-11CF-8736-00AA00A485EB}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Cleanup\{C6B2E8D0-E005-11CF-A134-00C04FD7BF43}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Cleanup\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Cleanup\{FC451C16-AC75-11D1-B4B8-00C04FB66EA0}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\DiagnosticPolicy\{573E31F8-DDBA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\FinalPolicy\{00AAC56B-CD44-11D0-8CC2-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\FinalPolicy\{189A3842-3041-11D1-85E1-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\FinalPolicy\{5555C2CD-17FB-11D1-85C4-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\FinalPolicy\{573E31F8-AABA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\FinalPolicy\{573E31F8-DDBA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\FinalPolicy\{64B9D180-8DA2-11CF-8736-00AA00A485EB}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\FinalPolicy\{C6B2E8D0-E005-11CF-A134-00C04FD7BF43}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\FinalPolicy\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\FinalPolicy\{FC451C16-AC75-11D1-B4B8-00C04FB66EA0}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Initialization\{00AAC56B-CD44-11D0-8CC2-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Initialization\{189A3842-3041-11D1-85E1-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Initialization\{5555C2CD-17FB-11D1-85C4-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Initialization\{573E31F8-AABA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Initialization\{573E31F8-DDBA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Initialization\{64B9D180-8DA2-11CF-8736-00AA00A485EB}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Initialization\{C6B2E8D0-E005-11CF-A134-00C04FD7BF43}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Initialization\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Initialization\{FC451C16-AC75-11D1-B4B8-00C04FB66EA0}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Message\{00AAC56B-CD44-11D0-8CC2-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Message\{189A3842-3041-11D1-85E1-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Message\{5555C2CD-17FB-11D1-85C4-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Message\{573E31F8-AABA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Message\{573E31F8-DDBA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Message\{64B9D180-8DA2-11CF-8736-00AA00A485EB}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Message\{C6B2E8D0-E005-11CF-A134-00C04FD7BF43}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Message\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Message\{FC451C16-AC75-11D1-B4B8-00C04FB66EA0}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Signature\{00AAC56B-CD44-11D0-8CC2-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Signature\{189A3842-3041-11D1-85E1-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Signature\{5555C2CD-17FB-11D1-85C4-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Signature\{573E31F8-AABA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Signature\{573E31F8-DDBA-11D0-8CCB-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Signature\{64B9D180-8DA2-11CF-8736-00AA00A485EB}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Signature\{C6B2E8D0-E005-11CF-A134-00C04FD7BF43}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Signature\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Signature\{FC451C16-AC75-11D1-B4B8-00C04FB66EA0}",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Usages\1.3.6.1.4.1.311.10.3.3",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Usages\1.3.6.1.5.5.7.3.1",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Usages\1.3.6.1.5.5.7.3.2",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\Cryptography\Providers\Trust\Usages\2.16.840.1.113730.4.1",$DLL,0x00000000,WINTRUST.DLL
+HKLM,"Software\Microsoft\GdiDetectionTool","GDITool",0x00010001,0x1
+HKLM,"Software\Microsoft\Internet Explorer","QFEInstalled",0x10001,1
+HKLM,"SOFTWARE\Microsoft\Internet Explorer\ActiveX Compatibility\{03D9F3F2-B0E3-11D2-B081-006008039BF0}","Compatibility Flags",0x10001,1024
+HKLM,"Software\Microsoft\Internet Explorer\ActiveX Compatibility\{06A7EC63-4E21-11D0-A112-00A0C90543AA}","Compatibility Flags",0x10001,1024
+HKLM,"Software\Microsoft\Internet Explorer\ActiveX Compatibility\{41B23C28-488E-4E5C-ACE2-BB0BBABE99E8}","Compatibility Flags",0x00010001,0x400
+HKLM,"Software\Microsoft\Internet Explorer\ActiveX Compatibility\{41B23C28-488E-4E5C-ACE2-BB0BBABE99E8}",AlternateCLSID,0x00000002,{52a2aaae-085d-4187-97ea-8c30db990436}
+HKLM,"Software\Microsoft\Internet Explorer\ActiveX Compatibility\{43F8F289-7A20-11D0-8F06-00C04FC295E1}","Compatibility Flags",0x10001,1024
+HKLM,"Software\Microsoft\Internet Explorer\ActiveX Compatibility\{4B106874-DD36-11D0-8B44-00A024DD9EFF}","Compatibility Flags",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Rpc\SecurityService","10",0x00000000,"SECUR32.DLL"
+HKLM,"SOFTWARE\Microsoft\Rpc\SecurityService","DefaultAuthLevel",0x00000001,00,00,00,00
+HKLM,"SOFTWARE\Microsoft\Rpc\SecurityService","DefaultProvider",0x00000000,"SECUR32.DLL"
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Arial Bold Italic",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Arial Bold",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Arial Italic",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Arial",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Courier New Bold Italic",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Courier New Bold",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Courier New Italic",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Courier New",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Gulim",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","MS Gothic",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","MS Mincho",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","MS PGothic",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","MS PMincho",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","PMingLiU",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","SimSun",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Symbol",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Times New Roman Bold Italic",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Times New Roman Bold",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Times New Roman Italic",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Times New Roman",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\t2embed","Wingdings",0x00010001,0
+HKLM,"SOFTWARE\Microsoft\Shared Tools\T2EMBED.DLL\Clients","%49000%\IEXPLORE.EXE",,""
+HKLM,"Software\Microsoft\Windows NT\CurrentVersion\Winlogon",BufferPolicyReads,0x10001,1
+HKLM,"Software\Microsoft\Windows\HTML Help",WINDOWS.CHM,,"%18%"
+HKLM,"SYSTEM\CurrentControlSet\Control\CrashControl","LogEvent",0x10001,01,00,00,00
+HKLM,"System\CurrentControlSet\control\IDConfigDB","HideNoneOfAbove",1,01,00,00,00
+HKLM,"System\CurrentControlSet\control\InstalledFiles","SECUR32.DLL",0x00000001,97,26,c0,b2,00,a0,00,00
+HKLM,"System\CurrentControlSet\Control\SecurityProviders","Domestic Security Version",0,"4.87"
+HKLM,"System\CurrentControlSet\Control\Shutdown","FastReboot",,"0"
+HKLM,"System\CurrentControlSet\Control\Update","UpdateMode",0x10001,0
+HKLM,"System\CurrentControlSet\Services\SNMP",,0x10
+HKLM,"System\CurrentControlSet\Services\SNMP\Parameters",,0x10
+HKLM,"System\CurrentControlSet\Services\SNMP\Parameters\EnableAuthenticationTraps","switch",0x1,01,00,00,00
+HKLM,"System\CurrentControlSet\Services\SNMP\Parameters\ExtensionAgents","1",,"SOFTWARE\Microsoft\RFC1156Agent\CurrentVersion"
+HKLM,"System\CurrentControlSet\Services\SNMP\Parameters\PermittedManagers",,0x10
+HKLM,"System\CurrentControlSet\Services\SNMP\Parameters\RFC1156Agent","sysContact",,"Your Name Here"
+HKLM,"System\CurrentControlSet\Services\SNMP\Parameters\RFC1156Agent","sysLocation",,"Your Location Here"
+HKLM,"System\CurrentControlSet\Services\SNMP\Parameters\RFC1156Agent","sysServices",0x1,4c,00,00,00
+HKLM,"System\CurrentControlSet\Services\SNMP\Parameters\TrapConfiguration",,0x10
+HKLM,"System\CurrentControlSet\Services\SNMP\Parameters\TrapConfiguration\1",,,"1"
+HKLM,"System\CurrentControlSet\Services\SNMP\Parameters\ValidCommunities","1",,"public"
+HKLM,"System\CurrentControlSet\Services\SNMP\Parameters\ValidCommunities","2",,"public2"
+HKLM,%CurrentVersion%\Explorer\Advanced\Folder\ShowAttribCol,"HelpID",,"update.hlp#51071"
+HKLM,%CurrentVersion%\Explorer\Advanced\Folder\ShowAttribCol,"RegPath",,"%CurrentVersion%\Explorer\Advanced"
+HKLM,%CurrentVersion%\Explorer\Advanced\Folder\ShowAttribCol,"Text",,%ShowAttributes%
+HKLM,%CurrentVersion%\Explorer\Advanced\Folder\ShowAttribCol,"Type",,"checkbox"
+HKLM,%CurrentVersion%\Explorer\Advanced\Folder\ShowAttribCol,"ValueName",,"ShowAttribCol"
+HKLM,%CurrentVersion%\Explorer\Advanced\Folder\ShowAttribCol,CheckedValue,0x10001,1
+HKLM,%CurrentVersion%\Explorer\Advanced\Folder\ShowAttribCol,DefaultValue,0x10001,0
+HKLM,%CurrentVersion%\Explorer\Advanced\Folder\ShowAttribCol,HKeyRoot,0x10001,01,00,00,80
+HKLM,%CurrentVersion%\Explorer\Advanced\Folder\ShowAttribCol,UncheckedValue,0x10001,0
+HKLM,%CurrentVersion%\RenameFiles\MSJETOL1.DLL,,,%11%
+HKLM,%CurrentVersion%\RenameFiles\MSJETOL1.DLL,MSJETOL1.DLL,,"MSJETOLEDB40.DLL"
+HKLM,%CurrentVersion%\RenameFiles\REPLMAN,,,%35353%\MICROS~1
+HKLM,%CurrentVersion%\RenameFiles\REPLMAN,REPLMAN,,"Replication Manager 4.0"
+HKLM,%CurrentVersion%\RunOnceEx\V6,00,,"%11%\REGSVR32.EXE /S %11%\ATL.DLL"
+HKLM,%CurrentVersion%\RunOnceEx\V6,01,,"%11%\REGSVR32.EXE /S %11%\MFC42.DLL"
+HKLM,%CurrentVersion%\RunOnceEx\V6,02,,"%11%\REGSVR32.EXE /S %11%\COMCAT.DLL"
+HKLM,%CurrentVersion%\RunOnceEx\V6,03,,"%11%\REGSVR32.EXE /S %11%\COMCT232.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,04,,"%11%\REGSVR32.EXE /S %11%\COMCT332.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,05,,"%11%\REGSVR32.EXE /S %11%\COMCTL32.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,06,,"%11%\REGSVR32.EXE /S %11%\COMDLG32.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,07,,"%11%\REGSVR32.EXE /S %11%\MCI32.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,08,,"%11%\REGSVR32.EXE /S %11%\MSCOMCT2.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,09,,"%11%\REGSVR32.EXE /S %11%\MSCOMCTL.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,10,,"%11%\REGSVR32.EXE /S %11%\MSCOMM32.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,11,,"%11%\REGSVR32.EXE /S %11%\MSFLXGRD.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,12,,"%11%\REGSVR32.EXE /S %11%\MSINET.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,13,,"%11%\REGSVR32.EXE /S %11%\MSMASK32.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,14,,"%11%\REGSVR32.EXE /S %11%\MSWINSCK.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,15,,"%11%\REGSVR32.EXE /S %11%\PICCLP32.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,16,,"%11%\REGSVR32.EXE /S %11%\RICHTX32.OCX"
+HKLM,%CurrentVersion%\RunOnceEx\V6,17,,"%11%\REGSVR32.EXE /S %11%\TABCTL32.OCX"
+HKLM,%CurrentVersion%\SharedDLLs,%11%\ATL.DLL,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\COMCAT.DLL,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\COMCT232.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\COMCT332.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\COMCTL32.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\COMDLG32.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\MCI32.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\MFC42.DLL,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\MSCOMCT2.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\MSCOMCTL.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\MSCOMM32.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\MSFLXGRD.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\MSINET.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\MSMASK32.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\MSVCIRT.DLL,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\MSVCP60.DLL,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\MSVCRT.DLL,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\MSWINSCK.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\PICCLP32.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\RICHTX32.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\SharedDLLs,%11%\TABCTL32.OCX,1,01,00,00,00
+HKLM,%CurrentVersion%\Winlogon,BufferPolicyReads,0x10001,1
+HKLM,%KT%,CountryListVersion,0x10001,285
+HKLM,%KT%\122,LongDistanceRule,,"1FG"
+HKLM,%KT%\213,SameAreaRule,,"0FG"
+HKLM,%KT%\216,LongDistanceRule,,"G"
+HKLM,%KT%\243,LongDistanceRule,,""
+HKLM,%KT%\255,InternationalRule,,"000EFG"
+HKLM,%KT%\256,InternationalRule,,"000EFG"
+HKLM,%KT%\257,InternationalRule,,"00EFG"
+HKLM,%KT%\262,InternationalRule,,"00EFG"
+HKLM,%KT%\262,LongDistanceRule,,"0IG"
+HKLM,%KT%\262,SameAreaRule,,"0IG"
+HKLM,%KT%\263,InternationalRule,,"00EFG"
+HKLM,%KT%\263,LongDistanceRule,,"0FG"
+HKLM,%KT%\269,InternationalRule,,"00EFG"
+HKLM,%KT%\290,InternationalRule,,"00EFG"
+HKLM,%KT%\298,InternationalRule,,"00EFG"
+HKLM,%KT%\30,LongDistanceRule,,"G"
+HKLM,%KT%\30,SameAreaRule,,"G"
+HKLM,%KT%\32,SameAreaRule,,"0FG"
+HKLM,%KT%\33,InternationalRule,,"EFG"
+HKLM,%KT%\33,LongDistanceRule,,"0IG"
+HKLM,%KT%\33,SameAreaRule,,"0IG"
+HKLM,%KT%\34,InternationalRule,,"00,EFG"
+HKLM,%KT%\34,LongDistanceRule,,"G"
+HKLM,%KT%\34,SameAreaRule,,"G"
+HKLM,%KT%\351,InternationalRule,,"00EFG"
+HKLM,%KT%\351,LongDistanceRule,,"IG"
+HKLM,%KT%\351,SameAreaRule,,"IG"
+HKLM,%KT%\357,LongDistanceRule,,"G"
+HKLM,%KT%\372,InternationalRule,,"00EFG"
+HKLM,%KT%\372,LongDistanceRule,," 0IG"
+HKLM,%KT%\374,InternationalRule,,"00EFG"
+HKLM,%KT%\374,LongDistanceRule,,"0FG"
+HKLM,%KT%\381,Name,,Serbie
+HKLM,%KT%\382,CountryCode,0x10001,382
+HKLM,%KT%\382,InternationalRule,,"99EFG"
+HKLM,%KT%\382,LongDistanceRule,,"0FG"
+HKLM,%KT%\382,Name,,Monténégro
+HKLM,%KT%\382,SameAreaRule,,"G"
+HKLM,%KT%\389,InternationalRule,,"00EFG"
+HKLM,%KT%\41,LongDistanceRule,,"0IG"
+HKLM,%KT%\41,SameAreaRule,,"0IG"
+HKLM,%KT%\420,LongDistanceRule,,"G"
+HKLM,%KT%\46,InternationalRule,,"00EFG"
+HKLM,%KT%\501,LongDistanceRule,,"G"
+HKLM,%KT%\502,LongDistanceRule,,"G"
+HKLM,%KT%\508,InternationalRule,,"00,EFG"
+HKLM,%KT%\590,InternationalRule,,"00,EFG"
+HKLM,%KT%\590,LongDistanceRule,,"0IG"
+HKLM,%KT%\590,SameAreaRule,,"0IG"
+HKLM,%KT%\594,InternationalRule,,"00,EFG"
+HKLM,%KT%\594,LongDistanceRule,,"0IG"
+HKLM,%KT%\594,SameAreaRule,,"0IG"
+HKLM,%KT%\596,InternationalRule,,"00,EFG"
+HKLM,%KT%\596,LongDistanceRule,,"0IG"
+HKLM,%KT%\596,SameAreaRule,,"0IG"
+HKLM,%KT%\60,LongDistanceRule,,"0FG"
+HKLM,%KT%\61,LongDistanceRule,,"0FG"
+HKLM,%KT%\66,SameAreaRule,,"0FG"
+HKLM,%KT%\670,InternationalRule,,"00EFG"
+HKLM,%KT%\670,LongDistanceRule,,"G"
+HKLM,%KT%\672,InternationalRule,,"0101EFG"
+HKLM,%KT%\672,LongDistanceRule,,""
+HKLM,%KT%\681,InternationalRule,,"00,EFG"
+HKLM,%KT%\81,InternationalRule,,"010EFG"
+HKLM,%KT%\82,InternationalRule,,"EFG"
+HKLM,%KT%\886,InternationalRule,,"EFG"
+HKLM,%KT%\962,LongDistanceRule,,"0FG"
+HKLM,%KT%\98,LongDistanceRule,,"0FG"
+HKLM,%KT%\992,CountryCode,0x10001,992
+HKLM,%KT%\992,InternationalRule,,"8W10EFG"
+HKLM,%KT%\992,LongDistanceRule,,"8WFG"
+HKLM,%KT%\992,Name,,Tadjikistan
+HKLM,%KT%\992,SameAreaRule,,"G"
+HKLM,%KT%\996,LongDistanceRule,,"0FG"
+HKLM,Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436},,0x00000002,"HHCtrl Object"
+HKLM,Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436}\Control,,0x00000012
+HKLM,Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436}\InprocServer32,,0x00000002,"%11%\HHCTRL.OCX"
+HKLM,Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436}\InprocServer32,ThreadingModel,0x00000002,Apartment
+HKLM,Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436}\MiscStatus,,0x00000002,0
+HKLM,Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436}\MiscStatus\1,,0x00000002,131473
+HKLM,Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436}\ProgID,,0x00000002,Internet.HHCtrl.1
+HKLM,Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436}\ToolboxBitmap32,,0x00000002,"%11%\HHCTRL.OCX,104"
+HKLM,Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436}\TypeLib,,0x00000002,{ADB880A2-D8FF-11CF-9377-00AA003B7A11}
+HKLM,Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436}\Version,,0x00000002,1.0
+HKLM,Software\Classes\CLSID\{52a2aaae-085d-4187-97ea-8c30db990436}\VersionIndependentProgID,,0x00000002,Internet.HHCtrl
+HKLM,Software\Classes\Internet.HHCtrl,,0x00000000,"HHCtrl Object"
+HKLM,Software\Classes\Internet.HHCtrl.1,,0x00000000,"HHCtrl Object"
+HKLM,Software\Classes\Internet.HHCtrl.1\CLSID,,0x00000000,{52a2aaae-085d-4187-97ea-8c30db990436}
+HKLM,Software\Classes\Internet.HHCtrl\CLSID,,0x00000000,{52a2aaae-085d-4187-97ea-8c30db990436}
+HKLM,Software\Classes\Internet.HHCtrl\CurVer,,0x00000000,Internet.HHCtrl.1
+HKLM,SOFTWARE\Microsoft\OLE,EnableDCOM,2,Y
+HKLM,SOFTWARE\Microsoft\OLE,EnableRemoteConnect,2,N
+HKLM,SOFTWARE\Microsoft\Rpc\ClientProtocols,ncacn_http,,RPCLTCCM.DLL
+HKLM,Software\Microsoft\Windows\Help,WINDOWS.CHM,,"%18%"
+HKLM,SYSTEM\CurrentControlSet\Services\RemoteAccess,EncryptionLevel,1,40,00,00,00
+HKLM,SYSTEM\CurrentControlSet\Services\RemoteAccess,ForceStrongEncryption,1,00,00,00,00
+HKLM,SYSTEM\CurrentControlSet\Services\RemoteAccess,SecureVPN,1,00,00,00,00
+HKLM,SYSTEM\CurrentControlSet\Services\RemoteAccess,UseLmPassword,1,01,00,00,00
+HKLM,SYSTEM\CurrentControlSet\Services\RemoteAccess,Version,,"2.2"
+HKU,".Default\%CurrentVersion%\Applets\Defrag\Settings","DisableScreenSaver",,"yes"
+HKU,".Default\%CurrentVersion%\Webcheck","NoChannelLogging",0x10001,1
+
+[DRH]
+HKCR,"*\shellex\PropertySheetHandlers\CryptoSignMenu\{7444C719-39BF-11D1-8CD9-00C04FC29D45}"
+HKCR,"CLSID\{06290BD5-48AA-11D2-8432-006008C3FBFC}\Implemented Categories\{7DD95801-9882-11CF-9FA9-00AA006C42C4}"
+HKLM,"System\CurrentControlSet\Control\SessionManager\CheckVerDLLs",COMCTL32.DLL
+HKLM,System\CurrentControlSet\control\InstalledFiles,RPCLTC1.DLL
+HKLM,System\CurrentControlSet\control\InstalledFiles,SECUR32.DLL
+
+[UIF]
+win.ini,fontsubstitutes,,"monotype.com=andale mono"
+
+[Strings]
+CurrentVersion="Software\Microsoft\Windows\CurrentVersion"
+KT="Software\Microsoft\Windows\CurrentVersion\Telephony\Country List"
+ShowAttributes="Afficher les attributs des fichiers dans la vue Détails"
+
+[SourceDisksNames]
+1=,,0

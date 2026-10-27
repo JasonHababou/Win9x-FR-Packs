@@ -1,0 +1,49 @@
+; ============================================================
+; VLC.INF - Pack Win98FR : VLC 3.0.24 sous KernelEx (jumper)
+; VLC 3 exige Windows XP SP3 : le site de VideoLAN conseille KernelEx
+; pour 98. Verification des imports (scratchpad\kexcover.py) : vlc.exe,
+; libvlc et libvlccore n'utilisent que des fonctions de Windows 98 ou
+; fournies par KernelEx 4.5.2019.24 ; les modules qui en demandent
+; d'autres (Direct3D 11, AV1/dav1d, Blu-ray, audio Vista, UPnP...) ont
+; ete retires du pack. install.bat copie VLC dans
+; Program Files\VideoLAN\VLC (sans l'installeur NSIS, qui refuserait 98).
+; Ici : mode KernelEx Windows XP SP3 (comme le reglage de jumper pour
+; VLC 2.2.8), interface en francais, raccourcis.
+; Test 1 : erreur de division dans LIBQT_PLUGIN.DLL a la fermeture ->
+; l'interface Qt passe aussi en mode XP SP3 (a valider).
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+CustomDestination=CDS
+AddReg=VLC.Reg
+UpdateInis=VLC.Liens
+
+[CDS]
+49001=ProgramFilesDir,5
+49758=DSC,5
+
+[ProgramFilesDir]
+HKLM,"Software\Microsoft\Windows\CurrentVersion","ProgramFilesDir","","%24%\Program Files"
+
+[DSC]
+HKCU,"Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders","Desktop",,"%25%\Bureau"
+
+[VLC.Reg]
+HKLM,"Software\KernelEx\AppSettings\Configs","*\VIDEOLAN\VLC\VLC.EXE",,"WINXP3"
+HKLM,"Software\KernelEx\AppSettings\Configs","*\VIDEOLAN\VLC\LIBVLC.DLL",,"WINXP3"
+HKLM,"Software\KernelEx\AppSettings\Configs","*\VIDEOLAN\VLC\LIBVLCCORE.DLL",,"WINXP3"
+HKLM,"Software\KernelEx\AppSettings\Configs","*\VIDEOLAN\VLC\PLUGINS\GUI\LIBQT_PLUGIN.DLL",,"WINXP3"
+HKCU,"Software\VideoLAN\VLC","Lang",,"fr"
+
+[VLC.Liens]
+setup.ini, progman.groups,, "VLC=VideoLAN"
+setup.ini, VLC,, """VLC media player"", ""%49001%\VideoLAN\VLC\vlc.exe"",,,, ""%49001%\VideoLAN\VLC"""
+setup.ini, progman.groups,, "Bureau=%49758%"
+setup.ini, Bureau,, """VLC media player"", ""%49001%\VideoLAN\VLC\vlc.exe"",,,, ""%49001%\VideoLAN\VLC"""
+
+[SourceDisksNames]
+1=,,0

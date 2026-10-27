@@ -1,0 +1,57 @@
+; Win98FR : Windows Script 5.7 (fichiers de la U98SESP3.66, dossier SUPP).
+; JScript 5.7.0.16535, VBScript 5.7.0.5730, WSH 5.7.0.16535.
+; Ces moteurs n'existent qu'en anglais (meme ceux du SP3.0 FR et de XP SP3 FR).
+; Contrairement au SCR579X.INF de la 3.66 : pas de WSCRIPT -REGSERVER ni de
+; cles HKCR (les menus FR "&Ouvrir", "&Editer" du scr56.inf du SP3.0 restent),
+; pas d'aide anglaise (WSCRIPT.HLP FR garde), pas de DYNWRAPX.DLL (non Microsoft).
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+CopyFiles=Copy.Engines,Copy.CScript,Copy.WScript
+AddReg=ActiveSetupReg
+RegisterOCXs=RegOCX
+
+[DestinationDirs]
+Copy.Engines=11
+Copy.CScript=13
+Copy.WScript=25
+
+[Copy.Engines]
+JSCRIPT.DLL
+VBSCRIPT.DLL
+SCRRUN.DLL
+DISPEX.DLL
+SCROBJ.DLL
+WSHOM.OCX
+WSHEXT.DLL
+WSHCON.DLL
+MSSCRIPT.OCX
+
+[Copy.CScript]
+CSCRIPT.EXE
+
+[Copy.WScript]
+WSCRIPT.EXE
+
+[RegOCX]
+%11%\JSCRIPT.DLL
+%11%\VBSCRIPT.DLL
+%11%\SCRRUN.DLL
+%11%\SCROBJ.DLL
+%11%\WSHOM.OCX
+%11%\WSHEXT.DLL
+%11%\WSHCON.DLL
+%11%\MSSCRIPT.OCX
+
+[ActiveSetupReg]
+HKLM,%ASRK%,,0,"Windows Script version 5.7"
+HKLM,%ASRK%,"Version",0,"5,7,0,5730"
+
+[SourceDisksNames]
+1=,,0
+
+[Strings]
+ASRK="Software\Microsoft\Active Setup\Installed Components\{4f645220-306d-11d2-995d-00c04f98bbc9}"

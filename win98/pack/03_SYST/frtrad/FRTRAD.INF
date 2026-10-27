@@ -1,0 +1,32 @@
+; ============================================================
+; FRTRAD.INF - Pack Win98FR : versions recentes TRADUITES en francais de
+; deux fichiers que le SP3.0 FR installe en anglais :
+;   OLEDLG.DLL 5.0.1601 (fenetre "Inserer un objet" de WordPad, Office...)
+;   HHCTRL.OCX 5.2.3790.4110 (fenetre de l'Aide HTML : boutons, menus)
+; Textes (dialogues, menus, chaines) repris des versions FR du CD de
+; Windows 98 SE (OLEDLG 5.0.1555, HHCTRL 4.73.8412) ; code inchange.
+; Outil : _construction_outils\traduire.py (+ hhctrl_manuel.py pour les
+; 7 chaines nouvelles de la 5.2). Copie forcee (meme numero de version que
+; l'anglais du SP3.0). A lancer APRES le SP3.0 (etape [3/11]).
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+CopyFiles=FR.Sys
+RegisterOCXs=FR.Reg
+
+[DestinationDirs]
+FR.Sys=11
+
+[FR.Sys]
+OLEDLG.DLL,,,36
+HHCTRL.OCX,,,36
+
+[FR.Reg]
+%11%\HHCTRL.OCX
+
+[SourceDisksNames]
+1=,,0

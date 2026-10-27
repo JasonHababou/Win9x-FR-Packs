@@ -1,0 +1,45 @@
+; ============================================================
+; QRES.INF - Pack Win98FR
+; QRes 1.0.9.5 (Berend Engelbrecht, freeware, licence BSD) :
+; change la resolution ou le nombre de couleurs le temps d'un
+; programme (ex. jeux Windows en 256 couleurs). Version autonome
+; tiree de qres-setup1090.zip (SourceForge, patches\qres1095.zip).
+; Voir LISEZMOI.TXT pour l'utilisation.
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+CopyFiles=QR.Win,QR.Sys,QR.Doc
+UpdateInis=QR.Lien
+
+[DestinationDirs]
+QR.Win=10
+QR.Sys=11
+QR.Doc=10
+
+[QR.Win]
+QRES.EXE
+QRESJEUX.HTA
+MODEAFF.EXE
+
+[QR.Sys]
+QRES32.DLL
+
+[QR.Doc]
+QRES.TXT,LISEZMOI.TXT
+
+; Raccourci de jeu : fenetre qui cree un raccourci de jeu avec
+; changement d'affichage (cible = fichier .HTA, sans espace dans le chemin)
+[QR.Lien]
+setup.ini, progman.groups,, "group6=%GAMES_DESC%"
+setup.ini, group6,, """%LIEN_DESC%"", ""%10%\QRESJEUX.HTA"""
+
+[Strings]
+GAMES_DESC="Jeux"
+LIEN_DESC="Raccourci de jeu (affichage et carte son)"
+
+[SourceDisksNames]
+1=,,0

@@ -1,0 +1,6 @@
+REGEDIT4
+
+; Pack Win98FR : DAEMON Tools 3.47 plante au demarrage avec KernelEx
+; -> extensions KernelEx desactivees pour daemon.exe (Flags = 1)
+[HKEY_LOCAL_MACHINE\Software\KernelEx\AppSettings\Flags]
+"*\\D-TOOLS\\DAEMON.EXE"=dword:00000001

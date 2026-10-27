@@ -1,0 +1,8 @@
+REGEDIT4
+
+; Pack Win98FR : VLC 3.0.24 sous KernelEx (mode Windows XP SP3, pose par VLC.INF)
+; Flags = 0 : chaque module garde son propre reglage. Flags = 2 (meme mode
+; pour tous les modules) empechait VLC de demarrer (teste sur GX240,
+; 2026-10-15). Le message d'erreur a la fermeture de VLC est sans consequence.
+[HKEY_LOCAL_MACHINE\Software\KernelEx\AppSettings\Flags]
+"*\\VIDEOLAN\\VLC\\VLC.EXE"=dword:00000000

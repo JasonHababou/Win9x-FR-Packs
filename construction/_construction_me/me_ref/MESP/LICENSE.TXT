@@ -1,0 +1,20 @@
+WindowsME Service Pack 2.0.2 NON-OFFICIEL
+
+Cette mise à jour s'applique seulement à la version *FRANCAISE* de WindowsMillenium EDITION (4.90.3000). Cette mise à jour n'est PAS de Microsoft. C'est une mise à jour NON-OFFICIELLE. C'est une compilation de fichiers de mise à jour Microsoft et d'autres fichiers.
+
+Vous utilisez cette mise à jour à vos propres risques! Nous vous recommandons fortement de sauvegarder vos données avant d'installer le pack.
+
+DISCLAIMER:
+
+Le Service Pack pour WindowsME Non-Officiel est un programme de mise à jour pour WindowsME produit et licencié par Microsoft Corporation. L'utilisation du Service Pack pour Windows ME Non-Officiel peut invalider la garantie et les conditions de garantie exprimées dans le contrat de licence d'utilisateur final de Windows. L'utilisation du service pack Non-Officiel ne remplace pas ou ne complète pas la garantie qui peut être invalidée. Toute responsabilité en cas d'utilisation ou de mauvaise utilisation du Service Pack pour Windows ME Non-Officiel est reportée sur l'utilisateur final. Ce programme est fourni "tel-quel," sans aucune garantie expresse ou impliquée. En aucun cas le fournisseur ne peut être tenu responsable pour des dommages causés par l'utilisation de ce programme. Tous les programmes de ce pack sont copyrightés par leurs propriétaires respectifs. Ce pack peut être téléchargé depuis ce site et n'est utilisable qu par les personnes ayant déjà acheté une copie de Windows ME. WindowsME Edition est une marqsue déposée de Microsoft Corporation et est utilisé par l'auteur dans un but descriptif seulement.
+
+REMERCIEMENTS SPECIAUX A:
+
+MDGx, erpdude8, Petr, WebMatze, eidenk, Max_04 et tous les autres contributeurs!
+
+---
+email: <email>
+---
+Version française par Matze
+http://www.gravure-hebdo.eu
+matze@gravure-hebdo.com

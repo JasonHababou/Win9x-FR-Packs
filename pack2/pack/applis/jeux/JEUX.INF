@@ -1,0 +1,25 @@
+; ============================================================
+; JEUX.INF - Pack Win98FR : raccourcis des jeux copies dans C:\Jeux
+; par install.bat (xcopy) :
+;  - Hover! FRANCAIS (CD Windows 95 OSR2.5 FR, FUNSTUFF\HOVER)
+;  - SkiFree et Echecs (anglais, Unofficial Game Pack 1.2 ;
+;    aucune version francaise)
+; Raccourcis dans Programmes\Jeux (syntaxe d'APPLETPP.INF).
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+UpdateInis=Jeux.Liens
+
+[Jeux.Liens]
+setup.ini, progman.groups,, "group6=%GAMES_DESC%"
+setup.ini, group6,, """Hover!"", ""C:\Jeux\Hover\HOVER.EXE"",,,, ""C:\Jeux\Hover"""
+setup.ini, group6,, """SkiFree"", ""C:\Jeux\SkiFree\SKI.EXE"",,,, ""C:\Jeux\SkiFree"""
+setup.ini, group6,, """%CHESS_DESC%"", ""C:\Jeux\Echecs\CHESS.EXE"",,,, ""C:\Jeux\Echecs"""
+
+[Strings]
+GAMES_DESC="Jeux"
+CHESS_DESC="Échecs (anglais)"

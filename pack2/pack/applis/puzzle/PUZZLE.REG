@@ -1,0 +1,22 @@
+REGEDIT4
+
+; Pack Win98FR : Microsoft Entertainment Pack - The Puzzle Collection, installee
+; dans C:\Jeux\Puzzle Collection sans son installeur (cles relevees dans le
+; registre d'une installation de reference, Sauvegarde 4). Pid = cle fournie
+; par l'utilisateur. Installed = 2046 : les 10 jeux.
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Microsoft Games\MEP Puzzle\1.0]
+"AppPath"="C:\\Jeux\\Puzzle Collection"
+"CDPath"="C:\\Jeux\\Puzzle Collection\\"
+"Help Path"="C:\\Jeux\\Puzzle Collection\\FR"
+"Shared Path"="Shared\\"
+"Pid"="01234-OEM-0123456-01234"
+"Installed"="2046"
+"VersionType"="RetailVersion"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Microsoft Games\MEP Puzzle\1.0\Registration]
+"ProductID"="01234-OEM-0123456-01234"
+"ProductName"="Microsoft Entertainment Pack: The Puzzle Collection"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\Puzzle Collection]
+"DisplayName"="Microsoft Entertainment Pack: The Puzzle Collection"
+"UninstallString"="C:\\Jeux\\Puzzle Collection\\Uninstal.exe /uninstall"

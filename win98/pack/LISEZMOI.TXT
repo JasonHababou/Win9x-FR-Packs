@@ -1,0 +1,55 @@
+Pack Windows 98 SE FR - CD 1 : installation de base (v3)
+=========================================================
+
+Lancement
+---------
+ - Depuis le CD : il demarre tout seul (AUTORUN.EXE), cliquez sur
+   "Installer Windows 98 SE FR". Laissez le CD dans le lecteur jusqu'a
+   la fin : l'installation redemarre Windows plusieurs fois et reprend
+   toute seule.
+ - Depuis un dossier du disque dur : copiez tout le contenu du CD dans
+   un dossier, puis double-cliquez sur AUTORUN.EXE ou sur INSTALL.BAT.
+
+Fermez tous les programmes avant de commencer. Si un installeur propose
+de redemarrer, repondez NON : c'est INSTALL.BAT qui redemarre au bon
+moment.
+
+Ordre conseille
+---------------
+ 1. Ce CD (INSTALL.BAT).
+ 2. Les pilotes : carte graphique, son, etc.
+    Deux cartes son (ex. ESS Allegro + SoundMAX integre) : en lecture par
+    defaut (Panneau de configuration > Multimedia > Audio), choisir celle
+    qui accelere DirectSound (ESS). Avec la SoundMAX, Battlefield 1942
+    tombait de 15 a 4 images/s (son mixe par le processeur). Pour un jeu
+    qui a besoin de l'autre carte (son CD numerique) : Raccourci de jeu.
+    Certains jeux plantent avec le pilote ESS (ecran bleu "exception 00
+    dans DSOUND.VXD" ou redemarrage, ex. The Nomad Soul) : Raccourci de
+    jeu avec la SoundMAX pour ce jeu.
+ 3. Le CD 2 (Win98FR_Plus) : DirectX (8.1, 8.2 ou 9.0c, a installer en
+    premier : sans lui, la plupart des jeux ne demarrent pas), MS Agent,
+    logiciels, jeux, outils de test et outils systeme (MMC, RegClean,
+    SharedDLLs).
+
+Contenu (un dossier par etape de l'installation)
+------------------------------------------------
+ 01_BASE   [1/11] IE6 SP1, Windows Media Player 9, correctifs, MDAC 2.8
+ 02_SP30   [2/11] Service Pack non officiel 3.0 FR (+ composants SP3.0)
+ 03_SYST   [3/11] Shell32, GDI, fichiers 3.63, certificats racine ;
+           sp366fr = couche 3.66 filtree FR, rloew = PATCHMEM
+           (les deux lances en dernier, etape [11/11])
+ 04_IEOE   [4/11] correctifs Internet Explorer et Outlook Express
+ 05_EXTRA  [5/11] KernelEx, NTFS, Plus! 98, Pinball, reglages...
+ 06_OPTS   [6/11] composants optionnels (fuseaux FR, Zip, TrueType...) ;
+           WinTop (moniteur de taches et memoire) vient du SP3.0
+           [7/11]   DirectX : dans le CD 2 (Win98FR_Plus)
+ 08_NET    [8/11] .NET Framework 1.1
+ 09_CHIP   [9/11] pilotes chipset Intel, VIA, SiS
+ 10_APPLI  [10/11] VC++ 2005 et 2008, QRes, 7-Zip, DAEMON Tools, RetroZilla,
+           Jeu de Tarot, Fraps, SIV (informations systeme : memoire,
+           PCI, USB, capteurs), bascule MSVCRT 6.1 - 7.0 (raccourci Bureau)
+ [11/11]   couche 3.66 FR, PATCHMEM, DMA (au choix), KernelEx
+           desactive, correctif d'arret NVIDIA
+
+Journal de l'installation : C:\W98FR\JOURNAL.TXT
+Originaux remplaces : C:\W98FR\BAK

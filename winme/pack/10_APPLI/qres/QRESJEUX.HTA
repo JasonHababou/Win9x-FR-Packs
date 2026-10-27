@@ -1,0 +1,224 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Raccourci de jeu</title>
+<!-- Pack Win98FR : cree un raccourci qui passe dans le mode d'affichage du
+     jeu (MODEAFF.EXE) et, au choix, sur une autre carte son, lance le jeu,
+     attend sa fin puis remet le mode du Bureau et la carte son habituelle.
+     Le raccourci vise un .BAT range dans C:\WINDOWS\QRESJEUX.
+     MODEAFF remplace QRes : apres QRes, le curseur disparaissait du Bureau
+     jusqu'au redemarrage (test GX240, 2026-10-16).
+     Carte son : sur le GX240, l'ESS Allegro mixe DirectSound en materiel
+     (BF1942 fluide) mais seule la SoundMAX (pilote WDM) joue le son CD
+     numerique (Alone in the Dark) ; la SoundMAX par defaut faisait tomber
+     BF1942 a 4 images/s (test 2026-10-17). -->
+<hta:application id="app" applicationname="QResJeux" border="dialog"
+  maximizebutton="no" scroll="auto" singleinstance="yes" icon="%windir%\modeaff.exe">
+<style>
+  body { font: 9pt Tahoma, "MS Sans Serif", sans-serif; background: buttonface;
+         color: buttontext; margin: 10px; }
+  fieldset { margin-bottom: 8px; padding: 6px; }
+  td { font: 9pt Tahoma, "MS Sans Serif", sans-serif; padding: 2px 4px; }
+  .note { color: graytext; }
+  button { width: 110px; }
+</style>
+<script language="JScript">
+var sh = new ActiveXObject("WScript.Shell");
+var fso = new ActiveXObject("Scripting.FileSystemObject");
+var WIN = fso.GetSpecialFolder(0).Path;
+var MODE = WIN + "\\MODEAFF.EXE";
+var DOSSIER = WIN + "\\QRESJEUX";
+var CARTES = DOSSIER + "\\CARTES.TXT";     // cartes son deja vues
+var SM = "HKEY_CURRENT_USER\\Software\\Microsoft\\Multimedia\\Sound Mapper";
+
+window.resizeTo(480, 640);
+
+// Arguments : x=... y=... c=... (rien si "ne pas changer")
+function argsMode(res, coul) {
+  var a = [];
+  if (res != "") { var r = res.split("x"); a.push("x=" + r[0], "y=" + r[1]); }
+  if (coul != "") a.push("c=" + coul);
+  return a.join(" ");
+}
+
+// Nom de fichier sans caracteres interdits
+function nomFichier(n) {
+  return n.replace(/[\\\/:\*\?"<>\|]/g, "").replace(/^\s+|\s+$/g, "");
+}
+
+// Fichier .REG qui choisit la carte son de lecture
+function regSon(chemin, carte) {
+  var v = carte.replace(/\\/g, "\\\\").replace(/"/g, "\\\"");
+  var t = fso.CreateTextFile(chemin, true);
+  t.Write("REGEDIT4\r\n\r\n[" + SM + "]\r\n\"Playback\"=\"" + v + "\"\r\n" +
+          "\"UserPlayback\"=\"" + v + "\"\r\n\r\n");
+  t.Close();
+}
+
+// Texte du .BAT (chemins courts : COMMAND.COM n'aime pas les espaces)
+function texteBat(nom, jeu, qJeu, regJeu) {
+  var f = fso.GetFile(jeu);
+  var dos = fso.GetFolder(f.ParentFolder.Path).ShortPath;
+  var avant = DOSSIER + "\\SONAVANT.REG";
+  var l = ["@echo off",
+           "REM " + nom + " - cree par Raccourci de jeu, pack Win98FR",
+           "REM Jeu : " + jeu];
+  if (regJeu != "") l.push("start /w REGEDIT /e " + avant + " \"" + SM + "\"",
+                           "start /w REGEDIT /s " + regJeu);
+  // Pause de 3 s apres le changement : sinon le jeu demarre avant que
+  // l'affichage soit en 256 couleurs (test GX240, Torin's Passage)
+  if (qJeu != "") l.push("start /w " + MODE + " " + qJeu,
+                         "choice /C:O /N /T:O,3 > NUL");
+  l.push(dos.substr(0, 2), "cd " + dos, "start /w " + f.ShortPath);
+  // Retour au mode du Bureau enregistre dans Windows, puis a la carte son d'avant
+  if (qJeu != "") l.push("start /w " + MODE + " /R");
+  if (regJeu != "") l.push("start /w REGEDIT /s " + avant);
+  l.push("cls");
+  return l.join("\r\n") + "\r\n";
+}
+
+function creeRaccourci(dossier, nom, bat, jeu) {
+  if (!fso.FolderExists(dossier)) fso.CreateFolder(dossier);
+  var lnk = sh.CreateShortcut(dossier + "\\" + nom + ".lnk");
+  lnk.TargetPath = bat;
+  lnk.WorkingDirectory = fso.GetFile(jeu).ParentFolder.Path;
+  lnk.IconLocation = jeu + ",0";
+  lnk.WindowStyle = 7;          // fenetre MS-DOS reduite
+  lnk.Description = "Lance " + nom + " dans son mode d'affichage";
+  lnk.Save();
+}
+
+function creer() {
+  var nom = nomFichier(document.all.nom.value);
+  var jeu = document.all.jeu.value;
+  var carte = document.all.autre.value != "" ? document.all.autre.value : document.all.son.value;
+  if (nom == "") { alert("Donnez un nom au raccourci."); return; }
+  if (jeu == "" || !fso.FileExists(jeu)) { alert("Choisissez le programme du jeu (.EXE)."); return; }
+  if (!fso.FileExists(MODE)) { alert("MODEAFF.EXE est introuvable : " + MODE); return; }
+  var qJeu = argsMode(document.all.resJeu.value, document.all.coulJeu.value);
+  if (qJeu == "" && carte == "") {
+    alert("Choisissez un affichage ou une carte son pour le jeu."); return;
+  }
+  if (!document.all.menu.checked && !document.all.bureau.checked) {
+    alert("Cochez au moins un emplacement pour le raccourci."); return;
+  }
+  if (!fso.FolderExists(DOSSIER)) fso.CreateFolder(DOSSIER);
+  var regJeu = "";
+  if (carte != "") {
+    regSon(DOSSIER + "\\" + nom + ".REG", carte);
+    regJeu = fso.GetFile(DOSSIER + "\\" + nom + ".REG").ShortPath;
+    retiensCarte(carte);
+  }
+  var bat = DOSSIER + "\\" + nom + ".BAT";
+  var t = fso.CreateTextFile(bat, true);
+  t.Write(texteBat(nom, jeu, qJeu, regJeu));
+  t.Close();
+  var ou = [];
+  if (document.all.menu.checked) {
+    creeRaccourci(sh.SpecialFolders("Programs") + "\\Jeux", nom, bat, jeu);
+    ou.push("Programmes\\Jeux");
+  }
+  if (document.all.bureau.checked) {
+    creeRaccourci(sh.SpecialFolders("Desktop"), nom, bat, jeu);
+    ou.push("Bureau");
+  }
+  alert("Raccourci \"" + nom + "\" créé (" + ou.join(" et ") + ").\n\n" +
+        "Il lance : " + bat);
+}
+
+// Nom propose = nom du programme
+function jeuChoisi() {
+  var j = document.all.jeu.value;
+  if (j != "" && document.all.nom.value == "")
+    document.all.nom.value = fso.GetBaseName(j);
+}
+
+// Cartes son connues : carte de lecture actuelle + celles deja vues
+function cartesConnues() {
+  var c = [];
+  if (fso.FileExists(CARTES)) {
+    var t = fso.OpenTextFile(CARTES, 1);
+    while (!t.AtEndOfStream) { var l = t.ReadLine(); if (l != "") c.push(l); }
+    t.Close();
+  }
+  return c;
+}
+function retiensCarte(carte) {
+  var c = cartesConnues();
+  for (var i = 0; i < c.length; i++) if (c[i] == carte) return;
+  if (!fso.FolderExists(DOSSIER)) fso.CreateFolder(DOSSIER);
+  var t = fso.OpenTextFile(CARTES, 8, true);
+  t.WriteLine(carte);
+  t.Close();
+}
+
+function init() {
+  document.all.actuel.innerText = screen.width + " x " + screen.height + ", " +
+    screen.colorDepth + " bits";
+  var actuelle = "";
+  try { actuelle = sh.RegRead("HKCU\\Software\\Microsoft\\Multimedia\\Sound Mapper\\Playback"); } catch (e) {}
+  if (actuelle != "") retiensCarte(actuelle);
+  document.all.sonActuel.innerText = actuelle != "" ? actuelle : "(inconnue)";
+  var c = cartesConnues();
+  for (var i = 0; i < c.length; i++) {
+    var o = document.createElement("option");
+    o.value = c[i]; o.text = c[i];
+    document.all.son.add(o);
+  }
+}
+</script>
+</head>
+<body onload="init()">
+<fieldset><legend>Jeu</legend>
+<table>
+<tr><td>Programme :</td><td><input type="file" id="jeu" size="30" onchange="jeuChoisi()"></td></tr>
+<tr><td>Nom :</td><td><input type="text" id="nom" size="36"></td></tr>
+</table>
+</fieldset>
+
+<fieldset><legend>Affichage pendant le jeu</legend>
+<table>
+<tr><td>Résolution :</td><td><select id="resJeu">
+  <option value="">Ne pas changer</option>
+  <option value="640x480" selected>640 x 480</option>
+  <option value="800x600">800 x 600</option>
+  <option value="1024x768">1024 x 768</option>
+  <option value="1280x1024">1280 x 1024</option>
+</select></td></tr>
+<tr><td>Couleurs :</td><td><select id="coulJeu">
+  <option value="">Ne pas changer</option>
+  <option value="8" selected>256 couleurs (8 bits)</option>
+  <option value="16">65 536 couleurs (16 bits)</option>
+  <option value="24">Couleurs vraies (24 bits)</option>
+  <option value="32">Couleurs vraies (32 bits)</option>
+</select></td></tr>
+</table>
+</fieldset>
+
+<fieldset><legend>Carte son pendant le jeu</legend>
+<table>
+<tr><td>Carte :</td><td><select id="son">
+  <option value="" selected>Ne pas changer</option>
+</select></td></tr>
+<tr><td>Autre :</td><td><input type="text" id="autre" size="30"></td></tr>
+<tr><td colspan="2" class="note">Carte actuelle : <span id="sonActuel"></span>.
+Une carte n'apparaît dans la liste qu'une fois choisie par défaut dans
+Multimédia, puis cette fenêtre rouverte.</td></tr>
+</table>
+</fieldset>
+
+<fieldset><legend>Retour au Bureau</legend>
+<span class="note">Automatique à la fin du jeu : affichage actuel (<span id="actuel"></span>) et carte son d'avant le jeu.</span>
+</fieldset>
+
+<fieldset><legend>Raccourci</legend>
+<input type="checkbox" id="menu" checked> Menu Démarrer, Programmes\Jeux
+&nbsp; <input type="checkbox" id="bureau"> Bureau
+</fieldset>
+
+<div align="right">
+<button onclick="creer()">Créer</button>
+<button onclick="window.close()">Fermer</button>
+</div>
+</body>
+</html>

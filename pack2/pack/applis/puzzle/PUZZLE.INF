@@ -1,0 +1,20 @@
+; ============================================================
+; PUZZLE.INF - Pack Win98FR : raccourci de The Puzzle Collection
+; (Play.exe = menu des 10 jeux) dans Programmes\Jeux.
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+UpdateInis=Puzzle.Lien
+
+; Cible en nom court : SETUP.INI coupe la ligne de commande au premier espace
+; (raccourci casse sur GX240, 2026-10-16). Le dossier de travail garde le nom long.
+[Puzzle.Lien]
+setup.ini, progman.groups,, "group6=%GAMES_DESC%"
+setup.ini, group6,, """The Puzzle Collection"", ""C:\Jeux\PUZZLE~1\PLAY.EXE"",,,, ""C:\Jeux\Puzzle Collection"""
+
+[Strings]
+GAMES_DESC="Jeux"

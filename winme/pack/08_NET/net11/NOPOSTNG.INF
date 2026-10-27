@@ -1,0 +1,14 @@
+; Pack WinMeFR / Win98FR : retire la precompilation .NET 1.1 (NetFxUpdate, "Postngen")
+; laissee dans RunOnce par le Framework 1.1 + SP1 : sous Windows 9x elle ne finit
+; jamais et bloque l'arret ("Postngen ne repond pas", tests QEMU et GX240 2026-10-21).
+; Sans elle, les programmes .NET demarrent un peu plus lentement, sans autre effet.
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+DelReg=SansPostngen
+
+[SansPostngen]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\RunOnce","NetFxUpdate_v1.1.4322"

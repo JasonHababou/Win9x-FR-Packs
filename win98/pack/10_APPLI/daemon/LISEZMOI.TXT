@@ -1,0 +1,14 @@
+DAEMON Tools 3.47 - Pack Win98FR
+================================
+DAEMON.MSI = paquet Windows Installer de daemon347.exe (l'EXE n'est qu'un
+lanceur compresse UPX ; ce .msi est celui qu'il avait extrait dans
+"Sauvegarde Saine\WINDOWS\Downloaded Installations\DAEMON Tools 3.47").
+Installation : MSIEXEC /i DAEMON.MSI /qb REBOOT=ReallySuppress
+(Windows Installer est apporte par SP3.0 ; le pilote d347bus/d347prt
+n'est actif qu'apres le redemarrage de fin d'installation).
+Dossier installe : C:\Program Files\D-Tools
+
+Langue : anglais. La 3.47 lit ses langues dans D-Tools\Lang\<code>.dll
+(1033.dll = anglais, fourni) ; aucun module francais trouve (2026-10-13).
+Si un jour il est trouve : le deposer ICI sous le nom 1036.DLL,
+install.bat le copiera dans D-Tools\Lang.

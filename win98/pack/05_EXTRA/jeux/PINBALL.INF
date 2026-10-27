@@ -1,0 +1,111 @@
+; ============================================================
+; PINBALL.INF - Pack Win98FR
+; Pinball 3D pour Windows - Space Cadet, version FRANCAISE
+; 4.90.3000.1 (Windows Me FR, copie de bkpWin98\cd\Mise a jour\PLUS98).
+; Remplace le Pinball anglais du "Unofficial Game Pack 1.2", dont les
+; raccourcis visent STARTM~1\PROGRAMS\ACCESS~1\GAMES (chemins anglais,
+; inexistants sur un Windows francais).
+; Installe dans Program Files\Plus!\Pinball, a cote du Spider Solitaire
+; FR de Plus! 98 (Program Files\Plus!\Spider).
+; Raccourci : Programmes\Jeux (syntaxe d'APPLETPP.INF).
+; Pas d'aide : PINBALL.CHM francais introuvable.
+; ============================================================
+[Version]
+Signature=$CHICAGO$
+AdvancedINF=2.5
+
+[DefaultInstall]
+SmartReboot=N
+CustomDestination=CDS
+CopyFiles=Pin.Files
+UpdateInis=Pin.Lien
+
+[CDS]
+49001=ProgramFilesDir,5
+
+[ProgramFilesDir]
+HKLM,"Software\Microsoft\Windows\CurrentVersion","ProgramFilesDir","","%24%\Program Files"
+
+[DestinationDirs]
+Pin.Files=49001,%PIN_DIR%
+
+[Pin.Lien]
+setup.ini, progman.groups,, "group6=%GAMES_DESC%"
+setup.ini, group6,, """%PIN_DESC%"", ""%49001%\%PIN_DIR%\PINBALL.EXE"",,,, ""%49001%\%PIN_DIR%"""
+
+[Pin.Files]
+FONT.DAT
+PINBALL.DAT
+PINBALL.EXE
+PINBALL.MID
+PINBALL2.MID
+SOUND1.WAV
+SOUND104.WAV
+SOUND105.WAV
+SOUND108.WAV
+SOUND111.WAV
+SOUND112.WAV
+SOUND12.WAV
+SOUND13.WAV
+SOUND131.WAV
+SOUND136.WAV
+SOUND14.WAV
+SOUND16.WAV
+SOUND17.WAV
+SOUND18.WAV
+SOUND181.WAV
+SOUND19.WAV
+SOUND20.WAV
+SOUND21.WAV
+SOUND22.WAV
+SOUND24.WAV
+SOUND240.WAV
+SOUND243.WAV
+SOUND25.WAV
+SOUND26.WAV
+SOUND27.WAV
+SOUND28.WAV
+SOUND29.WAV
+SOUND3.WAV
+SOUND30.WAV
+SOUND34.WAV
+SOUND35.WAV
+SOUND36.WAV
+SOUND38.WAV
+SOUND39.WAV
+SOUND4.WAV
+SOUND42.WAV
+SOUND43.WAV
+SOUND45.WAV
+SOUND49.WAV
+SOUND49D.WAV
+SOUND5.WAV
+SOUND50.WAV
+SOUND528.WAV
+SOUND53.WAV
+SOUND54.WAV
+SOUND55.WAV
+SOUND560.WAV
+SOUND563.WAV
+SOUND57.WAV
+SOUND58.WAV
+SOUND6.WAV
+SOUND65.WAV
+SOUND68.WAV
+SOUND7.WAV
+SOUND713.WAV
+SOUND735.WAV
+SOUND8.WAV
+SOUND827.WAV
+SOUND9.WAV
+SOUND999.WAV
+TABLE.BMP
+WAVEMIX.INF
+
+[SourceDisksNames]
+1=,,0
+
+[Strings]
+PIN_DIR="Plus!\Pinball"
+GAMES_DESC="Jeux"
+PIN_DESC="Pinball 3D - Space Cadet"
