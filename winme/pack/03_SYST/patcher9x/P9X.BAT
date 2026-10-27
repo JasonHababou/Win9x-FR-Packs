@@ -1,5 +1,5 @@
 @echo off
-REM patcher9x 0.9.91 (JHRobotics, licence MIT) : correctifs pour processeurs
+REM patcher9x 0.9.91 (JHRobotics, licence GPL v2) : correctifs pour processeurs
 REM recents (AMD Ryzen 3000 et plus, Intel Core 11e generation et plus) et
 REM vitesse du processeur. Sans le correctif memoire (mem) : il bloquait le
 REM SP3.0 (tests QEMU 2026-10-18) ; la memoire reste a PATCHMEM (03_SYST\rloew).
