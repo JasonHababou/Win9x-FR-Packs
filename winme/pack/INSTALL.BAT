@@ -511,6 +511,12 @@ choice /C:ON /N "DAEMON Tools 3.47 (lecteur CD virtuel) ? [O,N] "
 if errorlevel 2 goto NODT
 :OKDT
 start /w %WINDIR%\SYSTEM\MSIEXEC.EXE /i DAEMON.MSI /qb REBOOT=ReallySuppress
+REM  Installation parfois annulee ("Device setup error 25057", 2 tests QEMU sur 4,
+REM  27-28/10/2026) : un second essai la reussit
+if exist C:\PROGRA~1\D-TOOLS\DAEMON.EXE goto DAEMONOK
+echo DAEMON Tools : second essai>> C:\WMEFR\JOURNAL.TXT
+start /w %WINDIR%\SYSTEM\MSIEXEC.EXE /i DAEMON.MSI /qb REBOOT=ReallySuppress
+:DAEMONOK
 start /w REGEDIT /s DAEMON.REG
 :NODT
 cd ..\retrozil
