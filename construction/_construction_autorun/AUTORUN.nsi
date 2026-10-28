@@ -47,23 +47,25 @@ Function Menu
   Pop $DLG
 
 !if ${PACK} == 1
-  ${NSD_CreateLabel} 0 0 100% 44u "Pack Windows 98 SE FR « ultime » : correctifs, Service Pack 3.0, Internet Explorer, extras, DirectX, .NET, pilotes chipset et applications essentielles.$\r$\n$\r$\nL'installation redémarre Windows plusieurs fois et reprend toute seule. Laissez ce CD dans le lecteur jusqu'à la fin."
+  ${NSD_CreateLabel} 0 0 100% 54u "Pack Windows 98 SE FR « ultime » : correctifs, Service Pack 3.0, Internet Explorer, extras, DirectX, .NET, pilotes chipset et applications essentielles.$\r$\n$\r$\nL'installation redémarre Windows plusieurs fois et reprend toute seule. Laissez ce CD dans le lecteur jusqu'à la fin."
   Pop $0
-  ${NSD_CreateButton} 15% 52u 70% 18u "Installer Windows 98 SE FR"
+  ${NSD_CreateButton} 15% 58u 70% 18u "Installer Windows 98 SE FR"
   Pop $0
   ${NSD_OnClick} $0 Installer
-  ${NSD_CreateButton} 15% 76u 70% 18u "Lisez-moi"
+  ${NSD_SetFocus} $0
+  ${NSD_CreateButton} 15% 80u 70% 18u "Lisez-moi"
   Pop $0
   ${NSD_OnClick} $0 LisezMoi
   ${NSD_CreateLabel} 0 104u 100% 30u "Ensuite : installez les pilotes (carte graphique, son), puis insérez le CD 2 pour les logiciels, les jeux et les outils de test."
   Pop $0
 !else if ${PACK} == 3
-  ${NSD_CreateLabel} 0 0 100% 44u "Pack Windows Me FR : correctifs, Me SP 2.02 (non officiel), Internet Explorer 6 SP1, Media Player 9, MDAC 2.8, .NET 1.1, pilotes chipset, vrai mode MS-DOS et applications essentielles.$\r$\n$\r$\nL'installation redémarre Windows plusieurs fois et reprend toute seule. Laissez ce CD dans le lecteur jusqu'à la fin."
+  ${NSD_CreateLabel} 0 0 100% 54u "Pack Windows Me FR : correctifs, Me SP 2.02 (non officiel), Internet Explorer 6 SP1, Media Player 9, MDAC 2.8, .NET 1.1, pilotes chipset, vrai mode MS-DOS et applications essentielles.$\r$\n$\r$\nL'installation redémarre Windows plusieurs fois et reprend toute seule. Laissez ce CD dans le lecteur jusqu'à la fin."
   Pop $0
-  ${NSD_CreateButton} 15% 52u 70% 18u "Installer le pack Windows Me FR"
+  ${NSD_CreateButton} 15% 58u 70% 18u "Installer le pack Windows Me FR"
   Pop $0
   ${NSD_OnClick} $0 Installer
-  ${NSD_CreateButton} 15% 76u 70% 18u "Lisez-moi"
+  ${NSD_SetFocus} $0
+  ${NSD_CreateButton} 15% 80u 70% 18u "Lisez-moi"
   Pop $0
   ${NSD_OnClick} $0 LisezMoi
   ${NSD_CreateLabel} 0 104u 100% 30u "Ensuite : installez les pilotes (carte graphique, son), puis insérez le CD du pack 2 pour les logiciels, les jeux et les outils de test."
@@ -74,6 +76,7 @@ Function Menu
   ${NSD_CreateButton} 15% 42u 70% 18u "Installer (cases à cocher)"
   Pop $0
   ${NSD_OnClick} $0 Installer
+  ${NSD_SetFocus} $0
   ${NSD_CreateButton} 15% 64u 70% 18u "Installer (questions O/N, MS-DOS)"
   Pop $0
   ${NSD_OnClick} $0 InstallerBat
