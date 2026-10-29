@@ -32,8 +32,13 @@
   XPStyle on
 
   Var DLG
+  Var BINST
+  Var BBAT
+  Var BLIRE
 
-  Page custom Menu
+  ; Entree active le bouton par defaut de NSIS ("Suivant", cache) : MenuSortie lance
+  ; alors l'action du bouton qui a le focus
+  Page custom Menu MenuSortie
 
 Function Menu
   GetDlgItem $0 $HWNDPARENT 1
@@ -52,10 +57,12 @@ Function Menu
   ${NSD_CreateButton} 15% 58u 70% 18u "Installer Windows 98 SE FR"
   Pop $0
   ${NSD_OnClick} $0 Installer
+  StrCpy $BINST $0
   ${NSD_SetFocus} $0
   ${NSD_CreateButton} 15% 80u 70% 18u "Lisez-moi"
   Pop $0
   ${NSD_OnClick} $0 LisezMoi
+  StrCpy $BLIRE $0
   ${NSD_CreateLabel} 0 104u 100% 30u "Ensuite : installez les pilotes (carte graphique, son), puis insérez le CD 2 pour les logiciels, les jeux et les outils de test."
   Pop $0
 !else if ${PACK} == 3
@@ -64,10 +71,12 @@ Function Menu
   ${NSD_CreateButton} 15% 58u 70% 18u "Installer le pack Windows Me FR"
   Pop $0
   ${NSD_OnClick} $0 Installer
+  StrCpy $BINST $0
   ${NSD_SetFocus} $0
   ${NSD_CreateButton} 15% 80u 70% 18u "Lisez-moi"
   Pop $0
   ${NSD_OnClick} $0 LisezMoi
+  StrCpy $BLIRE $0
   ${NSD_CreateLabel} 0 104u 100% 30u "Ensuite : installez les pilotes (carte graphique, son), puis insérez le CD du pack 2 pour les logiciels, les jeux et les outils de test."
   Pop $0
 !else
@@ -76,13 +85,16 @@ Function Menu
   ${NSD_CreateButton} 15% 42u 70% 18u "Installer (cases à cocher)"
   Pop $0
   ${NSD_OnClick} $0 Installer
+  StrCpy $BINST $0
   ${NSD_SetFocus} $0
   ${NSD_CreateButton} 15% 64u 70% 18u "Installer (questions O/N, MS-DOS)"
   Pop $0
   ${NSD_OnClick} $0 InstallerBat
+  StrCpy $BBAT $0
   ${NSD_CreateButton} 15% 86u 70% 18u "Lisez-moi"
   Pop $0
   ${NSD_OnClick} $0 LisezMoi
+  StrCpy $BLIRE $0
 !endif
 
   nsDialogs::Show
@@ -92,8 +104,25 @@ Function Quitter
   SendMessage $HWNDPARENT ${WM_COMMAND} 2 0
 FunctionEnd
 
+Function MenuSortie
+  System::Call "user32::GetFocus()i.r0"
+  ${If} $0 == $BINST
+    Call LancerInstall
+  ${ElseIf} $0 == $BBAT
+    Call LancerBat
+  ${ElseIf} $0 == $BLIRE
+    ExecShell "open" "$EXEDIR\LISEZMOI.TXT"
+    Abort
+  ${EndIf}
+FunctionEnd
+
 Function Installer
   Pop $0
+  Call LancerInstall
+  Call Quitter
+FunctionEnd
+
+Function LancerInstall
   SetOutPath "$EXEDIR"
 !if ${PACK} != 2
   ReadEnvStr $1 COMSPEC
@@ -101,15 +130,18 @@ Function Installer
 !else
   Exec '"$EXEDIR\INSTALLER_PLUS.EXE"'
 !endif
-  Call Quitter
 FunctionEnd
 
 Function InstallerBat
   Pop $0
+  Call LancerBat
+  Call Quitter
+FunctionEnd
+
+Function LancerBat
   SetOutPath "$EXEDIR"
   ReadEnvStr $1 COMSPEC
   Exec '"$1" /c PLUS.BAT'
-  Call Quitter
 FunctionEnd
 
 Function LisezMoi

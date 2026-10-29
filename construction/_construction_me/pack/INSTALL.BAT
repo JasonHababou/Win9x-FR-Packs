@@ -654,7 +654,7 @@ echo.
 echo  Un redemarrage est necessaire pour finaliser.
 echo.
 echo  Ensuite, installez les pilotes (carte graphique, son...), puis
-echo  lancez le pack 2 (Win98FR_Plus) : DirectX, logiciels, jeux.
+echo  lancez le pack 2 (CD Win9x_FR_Plus) : DirectX, logiciels, jeux.
 echo.
 if "%WMEAUTO%"=="1" goto OKRB1
 choice /C:ON /N "Redemarrer maintenant ? [O,N] "

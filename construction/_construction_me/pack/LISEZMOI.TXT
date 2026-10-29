@@ -40,5 +40,5 @@ Contenu (8 etapes)
 Ensuite
 -------
 - Installez les pilotes de votre carte graphique et de votre carte son.
-- Inserez le CD du pack 2 (Win98FR_Plus) : DirectX 9, logiciels, jeux et
+- Inserez le CD du pack 2 (Win9x_FR_Plus) : DirectX 9, logiciels, jeux et
   outils de test.
