@@ -74,3 +74,13 @@ ISO : `ISO\Windows98\Win98SE_FR_QI_DVD_test1.iso` (3,0 Go), validée dans une VM
   - Intel : `845.cat` manquant, repris de ich2-m\win98se (même 845.inf) ;
   - ESS A1.INF : partie modem ES1989 en commentaire (es56cvmp.vxd absent du paquet Dell).
 - `makeiso.py` : **Rock Ridge** (le CD Office 2000 dépasse les 8 niveaux ISO9660), fichiers en mode r-xr-xr-x (sinon Linux ne lance plus `lunmercy`), et `add_file` au lieu de tout charger en mémoire.
+
+## Doublons de périphériques et écrans bleus sur le GX240 (29 octobre 2026)
+
+Retour du DVD QI Me test1 sur le Dell GX240 : périphériques système en double avec un point d'exclamation (Bus PCI, DMA, PIC, horloges, coprocesseur, haut-parleur, port souris PS/2, 8 « IRQ Holder ACPI »), puis 3 écrans bleus NDIS/TCPIP pendant le pack 2.
+
+- Cause : les références sont installées dans QEMU, sans BIOS Plug-and-Play. Setup y détecte ces périphériques à l'ancienne (`Enum\Root\*PNP0000`, `*PNP0100`, `*PNP0200`…), et sous Me on ajoute le Bus PCI à la main (`Enum\Root\System\0000`). QuickInstall, avec l'option par défaut « Skip legacy non-PnP hardware detection », applique `fastpnp.reg`, qui garde `Enum\Root`. Sur le vrai PC, l'ACPI (ou le BIOS PnP) détecte tout une seconde fois, y compris un second bus PCI.
+- Correction : `framework\registry\fastpnp.reg` supprime aussi `Enum\Root\` `*PNP0000`, `*PNP0100`, `*PNP0200`, `*PNP0400`, `*PNP0500`, `*PNP0600`, `*PNP0700`, `*PNP0800`, `*PNP0B00`, `*PNP0C04`, `*PNP0F0E`, `*PNPB003`, `*PNPB02F` et `System` (original : `fastpnp.reg.orig`). Le clavier `*PNP0303` est gardé : l'ACPI du GX240 n'en déclare pas.
+- Les jobs REGEDIT ont été refaits (dossiers `regjob_*_v2`). DVD reconstruits : 98 test4, Me test2, et les deux versions publiques.
+- Dans QEMU, Me n'a plus de bus PCI après l'installation (« carte graphique pas configurée », 16 couleurs). C'est attendu : sur un vrai PC, le bus PCI vient de l'ACPI ou du BIOS PnP.
+- Contournement sans nouveau DVD : mettre l'option « Skip legacy non-PnP hardware detection » sur **NO** (`slowpnp.reg` vide tout `Enum`).

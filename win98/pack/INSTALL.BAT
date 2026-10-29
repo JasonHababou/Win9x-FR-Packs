@@ -734,10 +734,18 @@ if errorlevel 2 goto NODT
 :OKDT
 start /w %WINDIR%\SYSTEM\MSIEXEC.EXE /i DAEMON.MSI /qb REBOOT=ReallySuppress
 REM  Installation parfois annulee ("Device setup error 25057", 2 tests QEMU sur 4,
-REM  27-28/10/2026) : un second essai la reussit
+REM  27-28/10/2026) : un second essai la reussit souvent ; sinon ("driver conflicts",
+REM  test du 29/10/2026), nouvel essai au demarrage suivant (DTRETRY.BAT, RunOnce)
 if exist C:\PROGRA~1\D-TOOLS\DAEMON.EXE goto DAEMONOK
 echo DAEMON Tools : second essai>> C:\W98FR\JOURNAL.TXT
 start /w %WINDIR%\SYSTEM\MSIEXEC.EXE /i DAEMON.MSI /qb REBOOT=ReallySuppress
+if exist C:\PROGRA~1\D-TOOLS\DAEMON.EXE goto DAEMONOK
+echo DAEMON Tools : nouvel essai au prochain demarrage>> C:\W98FR\JOURNAL.TXT
+echo   - DAEMON Tools : nouvel essai au prochain demarrage de Windows
+if not exist C:\W98FR\DAEMON\NUL md C:\W98FR\DAEMON
+copy DAEMON.MSI C:\W98FR\DAEMON > NUL
+copy DTRETRY.BAT C:\W98FR\DAEMON > NUL
+start /w REGEDIT /s DTRETRY.REG
 :DAEMONOK
 if exist 1036.DLL copy 1036.DLL "C:\Program Files\D-Tools\Lang" > NUL
 start /w REGEDIT /s DAEMON.REG

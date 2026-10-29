@@ -1,0 +1,5 @@
+REGEDIT4
+
+; Pack WMEFR : DAEMON Tools reinstalle au demarrage suivant (voir DTRETRY.BAT)
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce]
+"WMEFRDT"="command.com /c C:\\WMEFR\\DAEMON\\DTRETRY.BAT C:\\WMEFR"
