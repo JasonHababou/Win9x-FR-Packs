@@ -228,6 +228,10 @@ REM  [3/8] Systeme : certificats, KernelEx, WSH 5.7, fuseaux, USB 2.0
 REM ============================================================
 :ST3
 echo Etape ST3 : debut>> C:\WMEFR\JOURNAL.TXT
+REM  Me SP 2.02 pose MFC42.DLL 6.6.8063 : elle importe DelayLoadFailureHook, absent de
+REM  KERNEL32 sous Me, et aucun programme MFC ne demarre (Dell GX240, 30/10/2026).
+REM  La 6.2.4131 du SP 3.0 de 98 corrige (VM + GX240 ; SFP ne la remplace pas).
+copy 02_MESP\MFC42.DLL %WINDIR%\SYSTEM\MFC42.DLL > NUL
 del C:\WMEFR\ET*.TXT > NUL
 echo.> C:\WMEFR\ET3.TXT
 cls
@@ -338,11 +342,11 @@ choice /C:ON /N "Installer le pilote chipset de la carte mere ? [O,N] "
 if errorlevel 2 goto FINCHIP
 :OKCHIP
 cd 09_CHIP
-if exist C:\W98FR\CHIPSET.BAT del C:\W98FR\CHIPSET.BAT
-if not exist C:\W98FR\NUL md C:\W98FR
+if exist C:\WMEFR\CHIPSET.BAT del C:\WMEFR\CHIPSET.BAT
+if not exist C:\WMEFR\NUL md C:\WMEFR
 start /w CSCRIPT.EXE //NoLogo DETECT_CHIPSET.VBS
 set CHIPSET=INCONNU
-if exist C:\W98FR\CHIPSET.BAT call C:\W98FR\CHIPSET.BAT
+if exist C:\WMEFR\CHIPSET.BAT call C:\WMEFR\CHIPSET.BAT
 echo   Chipset detecte : %CHIPSET%
 echo Etape ST6 : chipset detecte = %CHIPSET%>> C:\WMEFR\JOURNAL.TXT
 echo.
@@ -450,7 +454,7 @@ cd ..\..
 
 :CHFIN
 cd ..
-if exist C:\W98FR\CHIPSET.BAT del C:\W98FR\CHIPSET.BAT
+if exist C:\WMEFR\CHIPSET.BAT del C:\WMEFR\CHIPSET.BAT
 :FINCHIP
 del C:\WMEFR\ET*.TXT > NUL
 echo.> C:\WMEFR\ET7.TXT

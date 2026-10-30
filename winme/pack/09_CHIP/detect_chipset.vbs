@@ -7,12 +7,12 @@
 ' sur une carte VIA/SiS equipee d'une carte reseau Intel.
 '   Intel : VEN_8086   VIA : VEN_1106   SiS : VEN_1039
 ' Repli : ancienne methode (premier fabricant trouve).
-' Ecrit le resultat dans C:\W98FR\CHIPSET.BAT (set CHIPSET=...).
+' Ecrit le resultat dans C:\WMEFR\CHIPSET.BAT (set CHIPSET=...).
 ' ============================================================
 Set WshShell = CreateObject("WScript.Shell")
 Set FSO = CreateObject("Scripting.FileSystemObject")
 
-tmpReg = "C:\W98FR\PCILIST.REG"
+tmpReg = "C:\WMEFR\PCILIST.REG"
 
 WshShell.Run "regedit /e " & tmpReg & " HKEY_LOCAL_MACHINE\Enum\PCI", 0, True
 
@@ -40,7 +40,7 @@ If FSO.FileExists(tmpReg) Then
     End If
 End If
 
-Set outBat = FSO.CreateTextFile("C:\W98FR\CHIPSET.BAT", True)
+Set outBat = FSO.CreateTextFile("C:\WMEFR\CHIPSET.BAT", True)
 outBat.WriteLine "set CHIPSET=" & vendor
 outBat.Close
 

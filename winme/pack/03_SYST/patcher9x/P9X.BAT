@@ -10,6 +10,6 @@ REM patcher9x refuse : "please choose Windows\system directory"). Reponses :
 REM P9XREP.TXT = 2 (VMM32.VXD corrige directement, choix par defaut pour SYSTEM,
 REM comme dans les CAB de l'ISO), Y, Entree. Tests QEMU 2026-10-18.
 echo   - Correctif processeurs recents (patcher9x)
-echo patcher9x : lance>> C:\W98FR\JOURNAL.TXT
-03_SYST\patcher9x\PATCH9X.EXE -auto -unselect mem %WINDIR%\SYSTEM < 03_SYST\patcher9x\P9XREP.TXT >> C:\W98FR\JOURNAL.TXT
-echo patcher9x : termine>> C:\W98FR\JOURNAL.TXT
+echo patcher9x : lance>> C:\WMEFR\JOURNAL.TXT
+03_SYST\patcher9x\PATCH9X.EXE -auto -unselect mem %WINDIR%\SYSTEM < 03_SYST\patcher9x\P9XREP.TXT >> C:\WMEFR\JOURNAL.TXT
+echo patcher9x : termine>> C:\WMEFR\JOURNAL.TXT

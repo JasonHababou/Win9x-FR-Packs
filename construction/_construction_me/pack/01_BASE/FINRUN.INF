@@ -13,3 +13,7 @@ DelReg=FinReprise
 
 [FinReprise]
 HKLM,"Software\Microsoft\Windows\CurrentVersion\Run","WMEFR"
+; UPnP de Me : le moniteur d'Explorer plante (UPNPUI.DLL) quand le reseau contient des
+; appareils UPnP (Dell GX240, 29/10/2026). Moniteur et service SSDP retires.
+HKLM,"Software\Microsoft\Windows\CurrentVersion\ShellServiceObjectDelayLoad","UPnPMonitor"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\RunServices","SSDPSRV"

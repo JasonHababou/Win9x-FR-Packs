@@ -12,7 +12,7 @@
 '
 ' Version reconnue par la taille de SYSTEM\NVCORE.VXD ; deja corrige
 ' si l'appel detourne contient C2 05 00 00. Originaux dans
-' C:\W98FR\BAK. Sans danger si relance, ou sans pilote NVIDIA.
+' C:\WMEFR\BAK. Sans danger si relance, ou sans pilote NVIDIA.
 '
 ' Modes :
 '   (aucun)     double-clic : message a la fin
@@ -32,8 +32,8 @@ ici = FSO.GetParentFolderName(WScript.ScriptFullName)
 win = FSO.GetSpecialFolder(0).Path
 sys = FSO.GetSpecialFolder(1).Path
 dest = win & "\NVFIX"
-bak = "C:\W98FR\BAK"
-If Not FSO.FolderExists("C:\W98FR") Then FSO.CreateFolder "C:\W98FR"
+bak = "C:\WMEFR\BAK"
+If Not FSO.FolderExists("C:\WMEFR") Then FSO.CreateFolder "C:\WMEFR"
 If Not FSO.FolderExists(bak) Then FSO.CreateFolder bak
 
 msg = ""
@@ -67,8 +67,8 @@ If etat = "C2050000" Then
     Note "Correctif d'arret : deja en place."
 ElseIf etat = orig Then
     If Not FSO.FileExists(bak & "\NVCORE.VXD") Then FSO.CopyFile nv, bak & "\NVCORE.VXD"
-    FSO.CopyFile ici & "\" & cor, "C:\W98FR\NVCORE.NEW", True
-    Renommer FSO.GetFile(nv).ShortPath, FSO.GetFile("C:\W98FR\NVCORE.NEW").ShortPath
+    FSO.CopyFile ici & "\" & cor, "C:\WMEFR\NVCORE.NEW", True
+    Renommer FSO.GetFile(nv).ShortPath, FSO.GetFile("C:\WMEFR\NVCORE.NEW").ShortPath
     Note "Correctif d'arret : pose au prochain demarrage (original dans " & bak & ")."
     pose = True
 Else
@@ -150,7 +150,7 @@ End Function
 
 Sub Note(texte)
     msg = msg & texte & vbCrLf
-    Set j = FSO.OpenTextFile("C:\W98FR\JOURNAL.TXT", 8, True)
+    Set j = FSO.OpenTextFile("C:\WMEFR\JOURNAL.TXT", 8, True)
     j.WriteLine "NVFIX : " & texte
     j.Close
 End Sub

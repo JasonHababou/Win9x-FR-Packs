@@ -84,3 +84,10 @@ Retour du DVD QI Me test1 sur le Dell GX240 : périphériques système en double
 - Les jobs REGEDIT ont été refaits (dossiers `regjob_*_v2`). DVD reconstruits : 98 test4, Me test2, et les deux versions publiques.
 - Dans QEMU, Me n'a plus de bus PCI après l'installation (« carte graphique pas configurée », 16 couleurs). C'est attendu : sur un vrai PC, le bus PCI vient de l'ACPI ou du BIOS PnP.
 - Contournement sans nouveau DVD : mettre l'option « Skip legacy non-PnP hardware detection » sur **NO** (`slowpnp.reg` vide tout `Enum`).
+
+
+## Retours Windows Me sur le GX240 (30 octobre 2026)
+
+- **MFC42.DLL** : Me SP 2.02 installe la 6.6.8063, qui importe `DelayLoadFailureHook`, absent de KERNEL32 sous Me : aucun programme MFC ne démarre sans KernelEx. Le pack recopie la 6.2.4131 (SP 3.0 de 98) au début de l'étape 3. Corrigé dans le pack et les images de référence, validé dans une VM et sur le GX240. SFP ne la remplace pas.
+- **UPnP** : Explorer plante dans UPNPUI.DLL dès qu'il y a des appareils UPnP sur le réseau. `FINRUN.INF` retire `UPnPMonitor` et `SSDPSRV` (pack) ; REGEDIT DOS fait de même dans les images QI (`"valeur"=-`).
+- **Installation « Bad file descriptor »** : `lunmercy` lit par blocs de 1 Mio et échoue si l'en-tête d'un groupe de fichiers de `FULL.866` chevauche une limite de bloc. Sur 6 paquets comparés, les 2 en échec avaient un tel en-tête, les 4 valides aucun. Le hasard de la disposition suffisait à casser un DVD : l'ancien MFC42 passait, le nouveau non. `mercypak.py` réordonne désormais les groupes (`v2_order`). Toujours tester l'installation après une capture.

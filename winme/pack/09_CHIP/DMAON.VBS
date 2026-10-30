@@ -13,8 +13,8 @@
 Set sh = CreateObject("WScript.Shell")
 Set fso = CreateObject("Scripting.FileSystemObject")
 cle = "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Class\hdc"
-export = "C:\W98FR\HDC.REG"
-sortie = "C:\W98FR\DMAON.REG"
+export = "C:\WMEFR\HDC.REG"
+sortie = "C:\WMEFR\DMAON.REG"
 
 sh.Run "regedit /e " & export & " """ & cle & """", 0, True
 If Not fso.FileExists(export) Then WScript.Quit
@@ -41,7 +41,7 @@ For Each bloc In Split(texte, vbCrLf & "[")
     End If
 Next
 
-Set j = fso.OpenTextFile("C:\W98FR\JOURNAL.TXT", 8, True)
+Set j = fso.OpenTextFile("C:\WMEFR\JOURNAL.TXT", 8, True)
 If n > 0 Then
     Set f = fso.CreateTextFile(sortie, True)
     f.Write reg
